@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html,
+        body {
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fbc02d;
+            height: 100%;
+        }
+
+        .root {
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 5px;
+            background: white;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25);
+            border-radius: 2px;
+            width: 400px;
+            height: 100px;
+        }
+
+        .root label {
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            display: inline-flex;
+            user-select: none;
+            cursor: pointer;
+        }
+
+        .root .heart {
+            width: 50px;
+            height: 50px;
+            padding: 10px;
+            box-sizing: border-box;
+            position: relative;
+            border-radius: 50%;
+            transition: background-color 200ms ease;
+        }
+
+        .root .heart:hover {
+            background-color: rgba(220, 0, 78, 0.08);
+        }
+
+        .root .heart:active {
+            background-color: rgba(220, 0, 78, 0.3);
+        }
+
+        .root .heart:active .ripple {
+            transform: scale(0);
+            opacity: 1;
+            transition: 0s;
+        }
+
+        .root .heart .checked {
+            fill: #dc004e;
+            display: none;
+        }
+
+        .root .heart .unchecked {
+            fill: grey;
+        }
+
+        .root #cbx {
+            display: none;
+        }
+
+        .root #cbx:checked+label .checked {
+            display: inline;
+        }
+
+        .root #cbx:checked+label .unchecked {
+            display: none;
+        }
+
+        .root .ripple {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            border-radius: 50%;
+            background-color: rgba(220, 0, 78, 0.8);
+            transform: scale(1.2);
+            opacity: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="root">
+        <input id="cbx" type="checkbox" />
+        <label for="cbx">
+            <span class="heart">
+                <span class="ripple"></span>
+                <svg class="unchecked" viewBox="0 0 24 24">
+                    <path
+                        d="M16.5 3c-1.74 0-3.41.81-4.5 2.09C10.91 3.81 9.24 3 7.5 3 4.42 3 2 5.42 2 8.5c0 3.78 3.4 6.86 8.55 11.54L12 21.35l1.45-1.32C18.6 15.36 22 12.28 22 8.5 22 5.42 19.58 3 16.5 3zm-4.4 15.55l-.1.1-.1-.1C7.14 14.24 4 11.39 4 8.5 4 6.5 5.5 5 7.5 5c1.54 0 3.04.99 3.57 2.36h1.87C13.46 5.99 14.96 5 16.5 5c2 0 3.5 1.5 3.5 3.5 0 2.89-3.14 5.74-7.9 10.05z">
+                    </path>
+                </svg>
+                <svg class="checked" viewBox="0 0 24 24">
+                    <path
+                        d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z">
+                    </path>
+                </svg>
+            </span>
+            <span>Heart Checkbox</span>
+        </label>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="div1" style="width: 200px;height: 200px;background: #cc0000;"></div>
+<script>
+    // function css() {
+    //     if(arguments.length==2) //获取
+    //     {
+    //         return arguments[0].style[arguments[1]];
+    //     }
+    //     else
+    //     {
+    //         arguments[0].style[arguments[1]]=arguments[2];
+    //     }
+    // }
+    // window.onload=function(){
+    //     var oDiv=document.getElementById('div1');
+    //
+    //     //alert(css(oDiv,'width));
+    //     css(oDiv, 'background','green');
+    // };
+
+
+    function css(obj,name,value) {
+        //obj就是第0个元素
+        if(arguments.length==2) //获取
+        {
+            return obj.style[arguments[1]];
+        }
+        else
+        {
+            obj.style[name]=value;
+        }
+    }
+    window.onload=function(){
+        var oDiv=document.getElementById('div1');
+
+        //alert(css(oDiv,'width));
+        css(oDiv, 'background','green');
+    };
+</script>
+</body>
+</html>

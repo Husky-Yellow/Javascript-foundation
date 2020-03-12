@@ -1,0 +1,23 @@
+﻿@{
+    ViewBag.Title = "TestIndex";
+}
+
+<h2>上传</h2>
+<form action="/Test/TestIndex" method="post" enctype="multipart/form-data">
+    <input type="file" name="file" /><br />
+    <input type="submit" value="提交" />
+
+
+    <dl>
+        <dt>
+            <h1>结果：</h1>
+        </dt>
+        <dd>
+            @ViewData["asdf"]
+            <br />
+            @ViewBag.asd
+        </dd>
+    </dl>
+</form>
+
+

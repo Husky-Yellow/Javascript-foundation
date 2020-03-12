@@ -1,0 +1,103 @@
+﻿/**********公共************/	
+@charset "utf-8";
+html{background:#fff;overflow:auto;}
+body{min-width:1200px;font:14px/18px "Microsoft Yahei"!important;/*font-weight:lighter;*/color:#333; -webkit-font-smoothing: antialiased; }
+*{margin:0; padding:0; /*border:none;*/}
+a{color:#333; text-decoration:none; cursor:pointer; outline: 0 none;}
+input{ outline: none; }
+a:focus{outline-style:none; border:0px;/*blr:expression(this.onFocus=this.blur());*/}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,p,blockquote,th,td{margin:0; padding:0;}
+/*header,footer,article,aside,section,nav,menu,hgroup,details,dialog,figure,figcaption{display:block}*/
+ol,li,ul,dl,dt,dd{list-style:none;}
+fieldset,img {border:0}
+button,submit,input,select { vertical-align:middle;}
+button,submit { cursor:pointer;}
+h1,h2,h3,h4,h5,h6{font-size:inherit; font-weight:lighter;}
+table{border-collapse:collapse; border-spacing:0;}
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+select,button{font-family:inherit; font-size:inherit; font-weight:inherit; outline-style:none; outline-width:0pt; padding: 0; margin: 0;}
+a,b,em,i,span{display:inline-block; font-weight:normal; font-style:normal;}
+.lf{float:left;} .rf{float:right;} .clear{clear: both;}/*.clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden;}*/ .clear{ *zoom:1;} .cursorP {cursor:pointer;}
+/*.container { width:1200px; position:relative; margin:0 auto;}*/
+/*******操作按钮的公共样式*******/
+.H_Manipulate{width: 80px;height: 34px;border: 1px solid #ccc;line-height: 34px;margin: 0 auto;margin-top: 30px;}
+.H_Manipulate .H_wenzi{display:block;cursor: pointer;width: 40px;height: 36px;line-height: 36px;float: left;margin-left: 15px;}
+.H_Manipulate .H_up{display:block;cursor: pointer;width: 10px;height: 10px;float: left;margin-top: 15px;background: url(../img/up.png) no-repeat;}
+.H_Manipulate .H_down{display:block;cursor: pointer;width: 10px;height: 10px;float: left;margin-top: 15px;background: url(../img/down.png) no-repeat;}
+.H_Manipulatecon{border: 1px solid #ccc;width: 80px;margin: 0 auto;border-top: 0;background: #fff;position: relative; /*ADD 20180320 W*/}
+.H_Manipulatecon span{display: block;width: 80px;height:36px;line-height: 36px;text-align: center;}
+.H_Manipulatecon span:hover{background-color:#0081E4;}
+.H_Manipulatecon a{width: 80px;height: 36px;text-align: center;line-height: 36px;margin-top: 1px;}
+.H_Manipulatecon a:hover{color: #fff;}
+/**************顶部导航*****************/
+#H_TopNav_1{ width: 100%; height: 30px; line-height: 30px; background: #f5f5f5; font-size: 12px;	}
+#H_TopNav_1 #H_MainBox_2{ width: 1200px; margin: 0 auto; }
+/****************请登录******************/
+#H_TopNav_1 #H_Llist_3 span:nth-child(1){ margin:0 20px; }
+#H_TopNav_1 #H_Llist_3 span a{ color: #4fc0fa; }
+/***********右列表   购物车，收藏等**************/
+#H_Rlist_3 ul li{ float: left; margin-left: 25px; }
+#H_TopNav_1 #H_Rlist_3 li a{ color: #666; }
+#H_TopNav_1 #H_Rlist_3 li a:hover{ color: #0081e4; text-decoration: none;}
+/***********顶部消息**************/
+#W_xiaoxicon{position:absolute;width:150px;border:1px solid #e7e7e7;z-index:0;background:#fff;display:block;float:left;margin-left:-1px;border-top:0}
+#W_xiaoxicon ul{list-style-type:none}
+#W_xiaoxicon ul li{display:block;float:left;width:70px;height:20px;line-height:20px;text-align:left;margin-top:5px;margin-left:5px;text-indent:2px}
+.A_headerrli_1 a{padding-left:5px;text-decoration:none;cursor:pointer;color:#000}
+/************Logo  搜索**************/
+#H_TopLogo_1{ width: 100%; height: 115px; }
+#H_TopLogo_1 #H_MainBox_2{ margin: 0 auto; width:1200px; }
+/**********好来Logo********/
+#H_TopLogo_1 #H_HLLogo_3{ width: 300px; height: 115px; background: url(../img/haolaicom.png) no-repeat 50px 20px; }
+/*********搜索框**********/
+#H_TopLogo_1 #H_Search_3{/*border: 1px solid red;*/width:600px;height:115px;}
+#H_TopLogo_1 #H_Search_3 .H_Search{ margin-top: 20px; }
+#H_TopLogo_1 #H_Search_3 .H_Search .H_searchBox{ width: 508px; height: 38px; border: 1px solid #0081e4; /*#0168b5*/}
+#H_TopLogo_1 #H_Search_3 .H_Search .H_searchBox>input{ width: 485px; height: 38px; padding-left: 13px; padding-right: 10px; outline: none; border: 0; }
+#H_TopLogo_1 #H_Search_3 .H_Search .H_searchText{ width: 90px; height: 40px; background: #0081e4;	/*#0168b5*/}
+#H_TopLogo_1 #H_Search_3 .H_Search .H_searchText>input{ width: 90px; height:40px; background: #0081e4;/*#0168b5*/ outline: none; border: 0; color: #fff; font-size: 16px; cursor: pointer;}
+/**********关键字**********/
+#H_TopLogo_1 #H_Search_3 .key{ height: 30px; margin-top: 10px; margin-left: 50px; }
+#H_TopLogo_1 #H_Search_3 .key li{ float: left; font-size: 14px; border-right:1px solid #ccc; margin: 0 10px; padding-right: 20px; }
+#H_TopLogo_1 #H_Search_3 .key li a{ color: #666; text-decoration: none;}
+#H_TopLogo_1 #H_Search_3 .key li a:hover{ color: #0081E4;}
+/************右侧广告**********/
+#H_TopLogo_1 #H_HeadAdv_3{ width:300px; height:115px; background: url(../img/djggw.png) no-repeat 55px 10px;}
+
+/***********信息导航*************/
+#H_Nav_1{ width: 100%;height: 40px;line-height:40px;background: #0e8fe4; }
+#H_Nav_1 #H_MainBox_2{ width: 1200px; margin: 0 auto; }
+#H_Nav_1 #H_MainBox_2 ul li{ float: left; text-align: center; width: 100px; }
+#H_Nav_1 #H_MainBox_2 ul li:hover{ background: #fff; }
+#H_Nav_1 #H_MainBox_2 ul li.H_AllIndustry{ width: 200px; color: #fff; background: #0b3f6e; margin-left: 0; }
+#H_Nav_1 #H_MainBox_2 ul li.H_AllIndustry b{ width: 15px; height: 14px; margin: 0 10px; }
+#H_Nav_1 #H_MainBox_2 ul li.H_AllIndustry b img{ vertical-align:middle; }
+#H_Nav_1 #H_MainBox_2 ul li a{ width: 100px; height: 40px; color: #fff; }
+#H_Nav_1 #H_MainBox_2 ul li a:hover{ color: #0081e4;text-decoration: none;}
+#H_Nav_1 p{ width: 205px; }
+#H_Nav_1 p span{ width: 100px; height:40px; background: #0178e0;text-align: center; }
+#H_Nav_1 p span a{color: #fff;text-decoration: none;}
+/**********企业官网通用导航***********/
+#H_EnterpriseLogo_1{ width: 100%; margin: 0 auto;border-top: 1px solid #ccc; border-bottom: 1px solid #ccc;height:120px;}
+#H_EnterpriseLogo_1 .H_EnterpriseLogo_1{margin: 0 auto;width: 1200px;}
+#H_EnterpriseLogo_1 #H_EnterpriseLogo_2{ width: 250px; height: 120px;background: #BDBDBD;}
+#H_EnterpriseLogo_1 .H_Invitation_2{line-height: 120px;}
+#H_EnterpriseLogo_1 .H_Invitation_2 a{ margin-left: 50px; text-decoration: none; }
+#H_EnterpriseLogo_1 .H_Invitation_2 a:hover{ color:#0081e4; }
+/**********企业官网导航*************/
+#H_EnterpriseNav_1{ width: 1200px; height: 40px; margin: 10px auto;line-height: 40px; font-size: 16px;}
+#H_EnterpriseNav_1 ul li{ float: left; margin-left: 69px; }
+#H_EnterpriseNav_1 ul li.H_EnterpriseFirst_2{margin-left: 0px;}
+#H_EnterpriseNav_1 ul li a:hover{ color: #0081e4; border-bottom:2px solid #0081e4 ; text-decoration: none;}
+
+/*******主体内容*********/
+#H_Main #H_MainBox_2{ width: 1200px; margin: 0 auto; }
+/**************底部版权信息**************/
+#H_Foot{ width: 1200px; margin: 0px auto; margin-top: 20px; }
+#H_Foot p{ border-bottom: 1px solid #0081e4; padding-bottom: 10px; margin-bottom: 15px; }
+#H_Foot p span{ margin-left: 20px;font-size: 14px; }
+#H_Foot p span a{ color: #0081e4; }
+#H_Copyright ul{ margin-left: 150px; }	
+#H_Copyright ul li{ float: left; margin-left: 10px; padding-right: 5px; border-right: 1px solid #ccc; font-size: 12px;	}
+#H_Copyright ul li:nth-child(1),#H_Copyright ul li:nth-child(2){ color: #ccc; border-right: none;}

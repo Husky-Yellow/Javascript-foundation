@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/common.css" />
+    <script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>
+        $(function () {
+            $(".H_Manipulate").click(function () {
+                if ($(this).find(".H_down").css("display") != "none") {
+                    $(this).next().show();
+                    $(this).find(".H_down").hide();
+                    $(this).find(".H_up").show();
+                } else {
+                    $(this).next().hide();
+                    $(this).find(".H_down").show();
+                    $(this).find(".H_up").hide();
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+    <div class="H_Manipulate" >
+        <span class="H_wenzi">操作</span>
+        <span class="H_up" style="display: none;"></span>
+        <span class="H_down"></span>
+    </div>
+    <div class="H_Manipulatecon" style="display: none;">
+        <span><a href="">查看操作</a></span>
+        <span><a href="">付款</a></span>
+        <span><a href="">删除</a></span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #div1 {width: 100px;
+            height: 100px;
+            background: red;
+            position: absolute;
+        }
+    </style>
+
+    <script>
+    document.onkeydown=function(){
+       var oEvent=event;
+       var oDiv=document.getElementById('div1');
+
+       if(oEvent.keyCode==37){    //左键
+           oDiv.style.left=oDiv.offsetLeft-10+'px';
+
+       } else if(oEvent.keyCode==39){    //右键
+        oDiv.style.left=oDiv.offsetLeft+10+'px';
+       }
+    }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>  
+    <!-- //当按住右键的时候会顿一下 -->
+</body>
+</html>  

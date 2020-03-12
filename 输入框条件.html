@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script>
+    function validate_required(field, alerttxt) { //这句话中validate_required的意义和field,alerttxt的价值
+        with(field) {
+            if (value == null || value == "") {
+                alert(alerttxt);
+                return false
+            } else {
+                return true;
+            }
+        }
+    }
+
+    function validate_form(thisform) {
+        with(thisform) {
+            if (validate_required(scorenumber, "用户账号不能为空！") == false) {
+                scorenumber.focus();
+                return false
+            } else if (validate_required(phone, "用户电话不能为空！") == false) {
+                phone.focus();
+                return false
+            }
+            if (validate_required(password, "用户密码不能为空！") == false) {
+                password.focus();
+                return false
+            } else if (validate_required(email, "用户邮箱不能为空！") == false) {
+                email.focus();
+                return false
+            }
+            var email_reg = /^[\w!#$%&'*+/=?^_`{|}~-]+(?:\.[\w!#$%&'*+/=?^_`{|}~-]+)*@(?:[\w](?:[\w-]*[\w])?\.)+[\w](?:[\w-]*[\w])?$/
+            if (!email_reg.test(document.forma.email.value)) {
+                alert("请检查您邮箱中的”@“和”.“是否输入正确");
+                email.focus();
+                return false;
+            }
+            var phone_reg = /^1\d{10}$/;
+            if (!phone_reg.test(document.forma.phone.value)) {
+                alert("手机号码为11位哦亲");
+                phone.focus();
+                return false;
+            }
+        }
+    }
+    </script>
+</head>
+
+<body>
+
+    <form action="#" method="post" name = "forma" onsubmit="return validate_form(this)">
+    <p label for="scorenumber">请输入用户账号：</label> 
+    <input name="scorenumber" id="scorenumber" type="text" ></p>
+    <p label for = "phone">请输入用户电话：</label>
+    <input name="phone" id = "phone" type = "text"></p>
+    <p label for="password">请输入用户密码：</label>
+    <input name="password" id="password" type="text" ></p>
+    <p label for="email">请输入用户邮箱：</label>
+    <input name="email" id="email" type="text" ></p>
+
+   <td><input type = "reset" value="重填" class = "mybut"></td>
+    <td><input type = "submit" value = "登陆" class = "mybut"></td>
+    </form>
+</body>
+</html>

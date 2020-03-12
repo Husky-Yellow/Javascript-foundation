@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var aLi =document.getElementsByTagName('li');
+            for(var i=0;i<aLi.length;i++){
+                //判断i是否是偶数 如果i是偶数,i%2==0 返
+                // 回1(true),执行if后面语句, 如果i不是
+                // 偶数,i%2==0返回0(false)
+                if(i%2==0){
+                    aLi[i].style.background='yellow';
+                }
+                else{
+                    aLi[i].style.background='000';
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+</body>
+</html>

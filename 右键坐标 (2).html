@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Document</title>
+        <style type="text/css">
+            #main {
+                width: 500px;
+                height: 400px;
+                margin: 100px auto 20px;
+                border: 2px solid red;
+            }
+
+            p {
+                width: 500px;
+                height: 50px;
+                margin: 0 auto;
+                border: 2px solid green;
+                line-height: 50px;
+
+            }
+        </style>
+    </head>
+
+    <body>
+        <div id="main"></div>
+        <p>坐标为:<b id="show">(0,0)</b></p>
+        <script type="text/javascript">
+            window.onload = function () {
+                var main = document.getElementById('main');
+                var show = document.getElementById('show');
+                main.oncontextmenu = function (event) {
+                    console.log(event);
+
+                    var e = event || window.event;
+                    var m_x = e.clientX;
+                    var m_y = e.clientY;
+
+                    var mainL = this.offsetLeft;
+                    var mainT = this.offsetTop;
+
+                    var x = m_x - mainL;
+                    var y = m_y - mainT;
+                    show.innerHTML = "(" + x + "," + y + ")";
+                }
+            }
+
+        </script>
+    </body>
+
+</html>

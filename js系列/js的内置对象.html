@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- 创建对象 -->
+	<script>
+		// people = new Object();
+		// people.name="iwen";
+		// people.age='30';
+		// document.write("name:"+people.name+",age:"+people.age);
+
+		// people = {name:"iwen",age:"30"};
+		// document.write("name:"+people.name+"age:"+people.age);
+
+		function people(name,age){
+				this.name = name;
+				this.age = age;
+
+		}
+		son = new people("iwen",30);
+		document.write("name:"+son.name+",age:"+son.age);
+	</script>
+</body>
+</html>

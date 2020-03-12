@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text" name="" id="text1" value="Now is the time and this is the time  and that is the time">
+	<button id="btn1" onclick="getit()">好使</button>
+	<div id="result"></div>
+	<script>
+	function getit(){
+		var searchStr = document.getElementById("text1").value;
+		var pattern = /t\w*e/g;
+		var matchArray;
+		var str ="";
+		while((matchArray = pattern.exec(searchStr))!=null){
+			str +="在哪"+matchArray.index+"we found"+matchArray[0]+"<br>"
+		}
+		document.getElementById("result").innerHTML = str;
+	}
+	</script>
+</body>
+</html>

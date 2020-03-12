@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    window.onload=function(){
+    var students="江崟才,刘婉玥,董权德,耿思瑶,孟震,赵琦琳,张齐";
+    var result=students.split(",");
+    var resultArray="";
+    for(var i=0;i<result.length;i++){
+        resultArray+="有一位同学："+result[i]+"<br>";
+    }
+    var disp=document.getElementById("dispHere");
+    disp.innerHTML=resultArray;
+    }
+</script>
+<div id="dispHere"></div>
+</body>
+</html>

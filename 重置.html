@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		//方法一
+document.getElementById("myform").reset();
+
+//方法二
+$('#searchForm')[0].reset();
+
+//方法三   使用input按钮
+<input type="reset" name="reset" style="display: none;" />
+//方法四   如果有默认赋值，需要以下操作
+虽然reset方法可以做到一部分，但是如果你有个元素是这样的
+ <input name="percent" value="50"/> 
+那么点击reset只会还原成50
+ $(':input','#myform').not(':button, :submit, :reset, :hidden').val('').removeAttr('checked').removeAttr('selected');
+
+//方法五  如果是ajax提交表单后，刷新表单
+
+在form表单中添加一个隐藏的reset按钮， 
+<input type="reset" style="display:none;" /> 
+然后通过trigger来触发reset按钮 
+function subform(){ 
+　　/* 提交表单的代码部分 */ 
+　　$("input[type=reset]").trigger("click");//触发reset按钮 
+}
+	</script>
+</body>
+</html>

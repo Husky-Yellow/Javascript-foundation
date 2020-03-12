@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#div1{
+			width: 200px;
+			height: 200px;
+			background: yellow;
+		}
+	</style>
+	<script>
+		// num.1
+
+		// function toGreen(){
+		// 	var odiv = document.getElementById('div1')
+		// 	odiv.style.background='green';
+		// }
+		// function toYellow(){
+		// 	var odiv = document.getElementById('div1')
+		// 	odiv.style.background='yellow';
+		// }
+		// function toBlack(){
+		// 	var odiv = document.getElementById('div1')
+		// 	odiv.style.background='black';
+		// }
+
+		function setColor(color){
+			var odiv=document.getElementById('div1');
+			odiv.style.background=color;
+		}
+		//定义的时候color没有值
+	</script>
+</head>
+<body>
+
+	<!-- .num1 -->
+	<!-- <input type="button" value="变绿" onclick="toGreen()">
+	<input type="button" value="变黄" onclick="toYellow()">
+	<input type="button" value="变黑" onclick="toBlack()"> -->
+	
+	<input type="button" value="变绿" onclick="setColor('green')">
+	<input type="button" value="变黄" onclick="setColor('yellow')">
+	<input type="button" value="变黑" onclick="setColor('black')">
+	<div id="div1"></div>
+</body>
+</html>

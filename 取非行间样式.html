@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{width: 400px;
+            }
+        #div1{
+            width: 220px;
+            height: 200px;
+            background: red;
+            }
+    </style>
+</head>
+<body>
+<div id="div1"></div>
+<script>
+    function getStyle(obj,name){
+        if(obj.currentStyle){
+           return obj.currentStyle[name];
+        }else{
+            return getComputedStyle(obj,false)[name];
+        }
+    }
+    window.onload=function () {
+        var oDiv=document.getElementById('div1');
+
+
+        alert(getStyle(oDiv,'width'));
+    }
+
+
+    // window.onload=function () {
+    //     var oDiv=document.getElementById('div1');
+    //
+    //     // alert(oDiv.style.width);
+    //     //JS第二定律 一但是好东西一个不兼容
+    //    // alert(oDiv.currentStyle.width);   //获取非行间样式（但是不兼容）
+    //     //alert(getComputedStyle(oDiv.false).width); //计算后的样式
+    //     if(oDiv.currentStyle){
+    //         alert(oDiv.currentStyle.width);   //IE浏览器
+    //     }else{
+    //         alert(getComputedStyle(oDiv.false).width);  //火狐浏览器
+    //
+    //     }
+    // }
+</script>
+</body>
+</html>

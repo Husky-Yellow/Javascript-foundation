@@ -1,0 +1,260 @@
+#H_EnterpriseNav_1 ul li:nth-child(5) a {
+    color: #0081e4;
+    border-bottom: 2px solid #0081e4;
+}
+#H_banner_1{
+	width: 100%;
+	height:350px;
+	margin: 20px 0;
+	background: #f2f2f2;
+}
+#H_EnterpriseLogo_2{position: relative;}
+#H_EnterpriseLogo_2 .H_EnterpriseLogo_3{
+	height: 120px;
+}
+.H_Hidelist{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	height: 30px;
+}
+.H_Hidelist ul li{
+	float: left;
+	margin-left: 24px;
+	height: 30px;
+}
+/*********得分牌*********/
+.H_Scoreboard{
+	color: #fff;
+	background: #000;
+	opacity: 1.6;
+	width:130px;
+	height:170px;
+	position:absolute;
+	top:145px;
+	left:602px;
+	text-align: center;
+}	
+.H_Scoreboard .H_tit{
+	height: 20px;
+	line-height: 20px;
+	margin-top: 7px;
+} 
+.H_Scoreboard .H_tit .H_earth img{
+	cursor:pointer;
+	vertical-align: middle;
+}		
+.H_Scoreboard .H_tit .H_url{
+	font-size: 12px;
+	width: 70px;
+	height: 20px;
+	line-height: 20px;
+	cursor: default;
+}		
+.H_Scoreboard .H_tit .H_Pushpin{ vertical-align: middle; cursor: pointer;}	
+.H_Scoreboard .H_star{
+	border-bottom: 1px solid #fff;
+	height: 20px;
+	line-height:10px;
+	width: 100px;
+	margin: 0 auto;
+}		
+.H_Scoreboard .H_star img{
+	margin-left: -7px;vertical-align: middle
+}		
+.H_Scoreboard .H_Rank{
+	height: 20px;
+	line-height: 22px;
+	font-size: 15px;
+	margin-top:3px;
+	cursor: default;
+}		
+.H_Scoreboard .H_num{
+	height: 40px;
+	line-height: 24px;
+	font-size: 32px;
+	margin-top:3px;
+	margin-bottom: 6px;
+	cursor: default;
+}	
+    .H_Scoreboard .H_num1 {
+        height: 40px;
+        line-height: 24px;
+        font-size: 32px;
+        margin-top: 3px;
+        margin-bottom: 6px;
+        cursor: default;
+    }	
+.H_Scoreboard .H_score{
+	font-size: 15px;
+	height: 24px;
+	line-height: 24px;
+	border-top: 1px solid #fff;
+	width: 100px;margin: auto;
+	cursor: default;
+}
+.H_Scoreboard .H_mark{
+	height: 20px;
+	line-height: 20px;
+	font-size: 15px;
+	cursor: default;
+}
+/**********企业简介***********/
+#H_Main_1{
+	width: 1198px;
+	margin: 0 auto;
+	padding: 15px 0px;
+	border: 1px solid #ccc;
+}
+/********企业简介********/
+#H_Main_1 .H_Atlas_2{ width: 1200px; margin: 0 auto;}
+#H_Main_1 .H_Atlas_2 .H_Atlas_3{
+	width: 1140px;
+	margin: 0 auto;
+	height: 40px;
+	line-height: 35px;
+	font-size: 20px;
+	margin-bottom: 10px;
+	border-bottom: 1px solid #ccc;
+}
+#H_Main_1 .H_Atlas_2 .H_Atlas_3 b{
+	height: 20px;
+	border-left: 4px solid #0081E4;
+	margin-right: 10px;
+	margin-top: 7px;
+}
+#H_Main_1 .H_Atlastit_2 .H_Atlastit_3{
+	width: 1137px;
+	margin: 0 auto;
+}
+#H_Main_1 .H_Atlastit_2 .H_Atlastit_3 li{
+	float: left;
+	margin-right: 30px;
+	border: 1px solid #fff;
+	padding: 0px 10px;
+	height: 40px;
+	line-height: 40px;
+	cursor: pointer;
+	position: relative;
+}
+/**********角标定位**********/
+#H_Main_1 .H_Atlastit_2 .H_Atlastit_3 li .H_jiaobiao{
+	height: 13px;
+	width: 13px;
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+}
+#H_Main_1 .H_Atlastit_2 .H_Atlastit_3 li .H_jiaobiao img{ vertical-align: top; }
+
+/****图片内容*******/
+#H_Main_1 .H_AtlasCon_2 .H_AtlasCon_3{
+	width: 1138px;
+	margin: 20px auto;
+	border:1px solid #ccc;
+	padding-top: 20px;
+}
+#H_Main_1 .H_AtlasCon_2 .H_AtlasCon_3 ul li{ 
+	float: left; 
+	width: 200px;
+	height: 280px;
+	margin-left: 25px;
+	margin-bottom: 20px;
+}
+#H_Main_1 .H_AtlasCon_2 .H_AtlasCon_3 ul li .H_Atlas{
+	width: 190px;
+	height: 250px;
+}
+#H_Main_1 .H_AtlasCon_2 .H_AtlasCon_3 ul li .H_Atlas .H_AtlasPic{
+	width: 190px;
+	height: 250px;
+	background: #bdbdbd;
+}
+#H_Main_1 .H_AtlasCon_2 .H_AtlasCon_3 ul li .H_Atlas p{
+	height: 40px;
+	line-height: 40px;
+	width: 190px;
+	text-align: center;
+}
+/********分页********/
+#H_Main_1 .H_Page_2{
+	width: 1140px;
+	margin: 0 auto;
+}
+#H_Main_1 .H_Page_2 .H_Pagerec_3{
+	width: 500px;
+	height: 40px;
+	line-height: 40px;
+}
+#H_Main_1 .H_Page_2 .H_Pagerec_3 b{ color: red; margin: 0 10px; }
+#H_Main_1 .H_Page_2 .H_paging_3{
+	width: 500px;
+	height: 40px;
+	line-height: 40px;
+	border: 1px solid red;
+	
+}
+/*******标题*****/
+ .C_title{
+	height: 40px;
+	border-bottom: 1px solid #CCCCCC;
+	margin: 0 25px;
+    margin-top:-18px;
+    margin-bottom:20px;
+
+}
+ .C_title span{
+	font-size: 16px;
+	color: #0081e4;
+	line-height:50px;	
+}
+.C_BlueBar{
+	border-left: 4px solid #0081e4;
+	height:16px;
+	width: 4px;
+	/*margin-left:10px;*/
+	margin-right: 5px;
+	margin-top: 18px;
+}
+.H_ScoreboardContainer {
+    position: relative;
+}
+.H_Scoreboard {
+    color: #fff;
+    background: #000;
+    opacity: 1.6;
+    width: 130px;
+    height: 170px;
+    position: absolute;
+    top: 0px;
+    left: 225px;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

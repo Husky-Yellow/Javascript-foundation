@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="bdjy"></div>
+	<button onclick="jy()">添加元素</button>
+	<button onclick="deljy()">删除</button>
+</body>
+</html>
+<script>
+	function jy(){
+		var myjyo=document.createElement('p')
+		var mydiv=document.getElementById('bdjy')
+		mydiv.appendChild(myjyo)
+	}
+	function deljy(){
+		var adiv=document.getElementById('bdjy')
+		var p=document.getElementsByTagName('p')
+		var plen=document.getElementsByTagName('p').length-1;
+		adiv.removeChild(p[plen])
+	}
+</script>

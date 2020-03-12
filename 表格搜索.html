@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function ()
+        {
+            var oTab=document.getElementById('tab1');
+            var oTxt=document.getElementById('name');
+            var oBtn=document.getElementById('btn1');
+
+            oBtn.onclick=function()
+            // {
+            //     for(var i=0;i<oTab.tBodies[0].rows.length;i++)
+            //     {
+            //         if(oTab.tBodies[0].rows[i].cells[1].innerHTML==oTxt.value)
+            //         {
+            //             oTab.tBodies[0].rows[i].style.background='yellow';
+            //         }
+            //         else
+            //             {
+            //                 oTab.tBodies[0].rows.style.background='';
+            //             }
+            //
+            //     }
+            // }
+            {
+                for(var i=0;i<oTab.tBodies[0].rows.length;i++)
+                {
+                var sTab=oTab.tBodies[0].rows[i].cells[1].innerHTML.toLowerCase();
+                var sTxt=oTxt.value.toLowerCase();
+                if(sTab.search(sTxt)!=-1)
+                {
+                    oTab.tBodies[0].rows[i].style.background='yellow';
+                }else
+                {
+                    oTab.tBodies[0].rows[i].style.background='';
+                }
+            }
+            }
+        }
+    </script>
+</head>
+<body>
+内容：<input id="name" type="text">
+<input id="btn1" type="button" value="搜素">
+<table id="tab1" border="1" width="500">
+    <thead>
+    <td>ID</td>
+    <td>姓名</td>
+    <td>年龄</td>
+    <td>操作</td>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td>BLUE</td>
+        <td>27</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>日</td>
+        <td>27</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>了</td>
+        <td>27</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>狗</td>
+        <td>27</td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

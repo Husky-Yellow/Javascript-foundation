@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            var oTab=document.getElementById('tab1');
+
+            alert(oTab.tBodies[0].rows.length); //如果不加tBodies的话会把表头算里面
+        }
+    </script>
+</head>
+<body>
+    <table id="tab1" border="1" width="500">
+        <thead>
+                <td>项目</td>
+                <td>名字</td>
+                <td>年龄</td>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>我</td>
+                <td>16</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>你</td>
+                <td>17</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>他</td>
+                <td>18</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

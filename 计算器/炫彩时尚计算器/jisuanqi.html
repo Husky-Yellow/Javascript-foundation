@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>炫彩时尚计算器-https://www.bilibili.com/video/av76586089/</title>
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		
+	</head>
+	<body>
+		<div class="content">
+			<nav>
+				<ul class="circle">
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</nav>
+			<header>
+				<div class="computed" id="computed"></div>
+				<div class="result" id="result">0</div>
+				<span></span>
+			</header>
+			<section>
+				<ul>
+					<li><a href="javascript:getAC()">AC</a></li>
+					<li><a href="#">+/-</a></li>
+					<li><a href="javascript:getOpter('/')">%</a></li>
+					<li><a href="#">&divide;</a></li>
+					
+					<li><a href="javascript:getNumber(7)" class="black">7</a></li>
+					<li><a href="javascript:getNumber(8)" class="black">8</a></li>
+					<li><a href="javascript:getNumber(9)" class="black">9</a></li>
+					<li><a href="javascript:getOpter('*')">&times;</a></li>
+				 
+					<li><a href="javascript:getNumber(4)" class="black">4</a></li>
+					<li><a href="javascript:getNumber(5)" class="black">5</a></li>
+					<li><a href="javascript:getNumber(6)" class="black">6</a></li>
+					<li><a href="javascript:getOpter('-')">-</a></li>
+					
+					<li><a href="javascript:getNumber(1)" class="black">1</a></li>
+					<li><a href="javascript:getNumber(2)" class="black">2</a></li>
+					<li><a href="javascript:getNumber(3)" class="black">3</a></li>
+					<li><a href="javascript:getOpter('+')">+</a></li>
+					
+					<li><a href="#" class="black">0</a></li>
+					<li><a href="#" class="black">.</a></li>
+					<li><a href="javascript:equals()" id="equals">=</a></li> 
+				</ul>
+			</section>
+		</div>
+	</body>
+	<script type="text/javascript">
+		// JS代码会与B站视频教程同步更新,此处JS代码为片断
+		var result = document.getElementById("result");
+		var computed = document.getElementById("computed");
+		var x_val = 0;
+		var temp = 0;
+		var ops = '';
+		var txt = '';
+		function equals(){
+			switch (ops){
+				case '+':
+					result.innerText = parseFloat(temp) + parseFloat(x_val);
+					break;
+				case '-':
+					result.innerText = parseFloat(temp) - parseFloat(x_val);
+					break;
+				case '*':
+					result.innerText = parseFloat(temp) * parseFloat(x_val);
+					break;
+				case '/':
+					result.innerText = parseFloat(temp) / parseFloat(x_val);
+					break;
+				default:
+					break;
+			}
+		}
+		function getNumber(n){ 
+			var str = result.innerText;
+			str.length == 1 && str == "0"?result.innerText='':'';
+			x_val = result.innerText += n;  
+			computed.innerText += x_val;
+		}
+		function getOpter(n){ 
+			temp = result.innerText;
+			result.innerText='';
+			ops = n;
+			computed.innerText += ops;
+		}
+		function getAC(){
+			result.innerText='0';
+			computed.innerText = '';
+		}
+	</script>
+</html>

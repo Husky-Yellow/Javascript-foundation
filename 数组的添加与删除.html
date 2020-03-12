@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // var arr=[1,2,3];
+    // arr.push(4);//在数组尾部添加
+    // arr.pop();//在数组的尾部删除
+    // alert(arr);
+
+    // var arr=[1,2,3];
+    //
+    // arr.shift();  //从头部删除元素
+    // arr.unshift(1);   //从头部添加元素
+    //     alert(arr);
+
+     var arr=[1,2,3,4,5];
+     //arr.splice(2,3);   //删除：splice（起点，长度）
+    //arr.splice(2,0,'a','b','c'); //插入：splice（起点，长度，元素。。。）从第二个位置删除0个元素所以无变化然后在第二个位置插入三个字符
+    arr.splice(2,2,'a','b');//替换：先删除后插入
+    alert(arr);
+</script>
+</body>
+</html>

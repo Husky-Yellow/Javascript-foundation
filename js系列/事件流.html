@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="div">
+		<button id="btn1">按钮</button>
+	</div>
+	<script>
+		// function demo(){
+		// 	alert("hello");
+		// }
+
+
+		// var btn1 = document.getElementById("btn1");
+		// btn1.addEventListener("click",demo1);
+		// btn1.addEventListener("click",demo2);
+		// btn1.addEventListener("click",demo3);
+		// function demo1(){
+		// 	alert("DOM2级事件处理程序")
+		// }
+		// function demo2(){
+		// 	alert("DOM2级事件处理程序2")
+		// }
+		// function demo3(){
+		// 	alert("DOM2级事件处理程序3")
+		// }
+		// btn1.removeEventListener("click",demo2);
+
+		var btn1 = document.getElementById("btn1");
+		if(btn1.addEventListener){
+			btn1.addEventListener("click",demo);
+		}else if(btn1.addEventListener){
+			btn1.attachEvent("onc")
+		}
+	</script>
+</body>
+</html>

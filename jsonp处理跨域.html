@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <script src="https://cdn.staticfile.org/jquery/3.4.1/jquery.js"></script>
+
+</head>
+
+<body>
+  <button id="btn">点啊草泥马</button>
+
+  <button type="button" onclick="loadXMLDoc()">点泥马勒戈壁</button>
+
+</body>
+<script>
+  function loadXMLDoc() {
+    var xmlhttp;
+    if (window.XMLHttpRequest) {
+      //  IE7+, Firefox, Chrome, Opera, Safari 浏览器执行代码
+      xmlhttp = new XMLHttpRequest();
+    }
+    else {
+      // IE6, IE5 浏览器执行代码
+      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    }
+    xmlhttp.onreadystatechange = function () {
+      if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        console.log("点尼玛");
+
+      }
+    }
+    xmlhttp.open("Post", "http://desma.isart.me/api/doctor/register  ", true);
+    xmlhttp.send();
+  }
+  $("#btn").click(function () {
+    $.ajax({
+      url: "http://desma.isart.me/api/doctor/register ",
+      type: "Post",
+      dataType: "jsonp", //指定服务器返回的数据类型
+      success: function (data) {
+        var result = JSON.stringify(data); //json对象转成字符串
+
+      }
+    });
+
+  });
+</script>
+
+</html>

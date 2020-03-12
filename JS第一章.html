@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- <script>
+		var qd=1;
+		if(qd="qd")
+			{alert("nande1")
+	}else{
+		alert("女的")
+	};
+
+		var qd="qd";
+		if(qd="qd")
+			{alert("nande1")};
+	</script> -->
+
+	<!-- <script>
+		var jyc="是胖子";
+		var judge="胖";
+		var i=jyc.indexOf(judge);//判断jyc里面有没有judge 这个i是代表这个字的位置
+		var j=jyc.lastIndexOf(judge);
+		
+		var result=jyc.substring(i,j);
+		alert(reault);
+	</script> -->
+
+	<script>  //将数组进行条件分割
+		window.onload=function(){
+		var students="日,月,雨,雪";
+		//建立变量
+		var result=students.split(",");
+		//结果等于什么（分割） result变成数组了  //用逗号来分割这个数组
+		 var resultArray="";
+		 for(var i=0;i<result.length;i++){
+		 	resultArray+="有一个情况："+result[i]+"<br>";
+		 }
+		// 这个+=是将所有进行显示，
+		 var disp=document.getElementById("dispHere");
+		 disp.innerHTML=resultArray;
+		}   //innerHTML.HTML大写
+	</script>
+
+
+<!-- <script>  //定义特殊符号
+	window.onload=function(){
+		var disp=document.getElementById("dispHere");
+		disp.innerHtml="@"  "&copy; \u00A9 \u00A8";
+	}   //尽量用u系列的 转义出特殊符号
+
+</script> -->
+<div id="dispHere"></div>
+</body>
+</html>

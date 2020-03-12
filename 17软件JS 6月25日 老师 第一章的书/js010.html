@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var books=new Array();
+    books[0]="Joe's Cooking Book";
+    books[1]="Sam's Cook Book";
+    books[2]="JS CookBook";
+    books[3]="PHP BookCook";
+    books[4]="JAVA cookbook";
+
+    var patten=/Cook.*Book/;
+    for (var i=0;i<books.length;i++){
+        alert((i+1)+books[i]+" "+patten.test(books[i]));
+    }
+
+</script>
+</body>
+</html>

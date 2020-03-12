@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="Generator" content="EditPlus®">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="mul()">九九乘法表</button>
+<button onclick="mul2()">九九乘法表</button>
+<button onclick="mul3()">九九乘法表</button>
+<script type="text/javascript">
+    function mul(){
+        for(var r=1;r<=9;r++){  //控制行数
+            var chart="";
+            for(var c=1;c<=r;c++){   //控制列数
+                chart+=(`${c}*${r}=${c*r}\t`)
+            }
+            console.log(chart);
+        }
+    }
+    function mul2() {
+        for(var r=1;r<=9;r++){  //控制行数
+            var chart="";
+            for(var c=1;c<=r;c++){   //控制列数
+                chart+=(`${c}*${r}=${c*r}\t`);
+            }
+            document.write(chart+"<br>");
+        }
+    }
+
+    function mul3() {
+        for(var r=9;r>=1;r--){  //控制行数
+            var chart="";
+            for(var c=1;c<=r;c++){   //控制列数
+                chart+=(`${c}*${r}=${c*r}\t`);
+            }
+            console.log(chart);
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>冒泡排序</title>
+    <script>
+        var arr = [3, 4, 1, 2];
+        function bubbleSort(arr) {
+            // 遍历数组，次数就是arr.length - 1
+            var max = arr.length - 1;
+            for (var j = 0; j < max; j++) {
+                // 声明一个变量，作为标志位
+                var done = true;
+                // 这里要根据外层for循环的 i，逐渐减少内层 for循环的次数
+                for (var i = 0; i < max - j; i++) {
+                    // 如果前一个数 大于 后一个数 就交换两数位置
+                    if (arr[i] > arr[i + 1]) {
+                        var temp = arr[i];
+                        arr[i] = arr[i + 1];
+                        arr[i + 1] = temp;
+                        done = false;
+                    }
+                }
+                if (done) {
+                    break;
+                }
+            }
+            return arr;
+        }
+        bubbleSort(arr);
+        console.log(arr)
+
+        // 冒泡排序二
+        function maopao(arra) {
+            var temp;
+            for (var i = 0; i < arra.length; i++) { //比较多少趟，从第一趟开始
+                for (var j = 0; j < arra.length - i - 1; j++) { //每一趟比较多少次数
+                    if (arra[j] > arra[j + 1]) {
+                        temp = arra[j];
+                        arra[j] = arra[j + 1];
+                        arra[j + 1] = temp;
+                    }
+                }
+            };
+            return arra;
+        }
+        var arrry = [85, 24, 63, 17, 31, 17, 86, 50];
+        var s = maopao(arrry);
+        console.log(s)
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>

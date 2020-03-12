@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #ul1{
+            background:green;
+        }
+        #ul2{
+            background:yellow;
+        }
+    </style>
+    <script>
+       window.onload=function () {
+           var oUl1=document.getElementById('ul1');
+          // var oUl2=document.getElementById('ul2');
+           var oBtn=document.getElementById('btn1');
+
+           /*oBtn.onclick=function () {
+               var oLi=oUl1.children[0];
+
+               /!*oUl1.removeChild(oLi);   //移除
+               oUl2.appendChild(oLi);   //插入*!/
+
+               oUl1.appendChild(oLi);  //1，appendChild 从原有的父级上删除，2，添加到新的父级上
+           }*/
+
+           oBtn.onclick=function () {
+               var aLi=oUl1.getElementsByTagName('li');
+
+               var arr=[];
+
+               for(var i=0;i<aLi.length;i++){
+                   arr[i]=aLi[i];
+               }
+               arr.sort(function (li1,li2) {
+                   var n1=parseInt(li1.innerHTML);
+                   var n2=parseInt(li2.innerHTML);
+
+                   return n1-n2;
+               });  //
+               //alert(arr[0].innerHTML);   //输出演示
+               for(var i=0;i<arr.length;i++){
+                   alert('把'+arr[i].innerHTML+'插入到最后');
+                   oUl1.appendChild(arr[i]);
+               }
+           }
+       }
+    </script>
+</head>
+<body>
+<!--<ul id="ul1">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>-->
+
+
+<!--排列使用-->
+<ul id="ul1">
+    <li>2</li>
+    <li>1</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ul>
+<input id="btn1" type="button" value="移动">
+<!--<ul id="ul2"></ul>-->
+</body>
+</html>

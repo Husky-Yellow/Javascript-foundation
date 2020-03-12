@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<textarea name="" id="text1" cols="30" rows="10"></textarea>-->
+<input type="text" name="" id="text1" value="      1 2 3 4 5 6 7 8     ">
+<button id="btn1" onclick="Trime()">点点我</button>
+<script type="text/ecmascript">
+    function Trime() {
+        var ttt=document.getElementById("text1");
+        var bbb=document.getElementById("btn1");
+        // var lines=ttt.value.split("\n");
+        // var result="";
+        //
+        // for (var i=0;i<lines.length;i++){
+        //     var string=lines[i].trim();
+        //     result+=string+"-";
+        // }
+        console.log(ttt.value.trim());
+    }
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <script>
+        window.onload = function () {
+            let a = "?type=mall_order&order_type=1&product_id=10000004&sku_id=10000004&service_flag=0&amount=1&shop_store_id=10000000&clerk_id=10000005&specification_item_ids=10000004"
+            // web
+            function getUrlQueryParams(url) {
+                var params = {};
+                var regex = /[\?&]([a-zA-Z_]+)=([\w\-\.]*)/g;
+                let results = ''
+                while ((results = regex.exec(url)) != null) {
+                    params[results[1]] = results[2];
+
+                }
+                console.log(`${JSON.stringify(params)}`);
+
+                return params;
+
+            }
+            getUrlQueryParams(a)
+
+            // 小程序
+            getUrlQueryParams(url) {
+                var params = {};
+                var regex = /[\?&]([a-zA-Z_]+)=([\w\-\.]*)/g;
+                let results = "";
+                while ((results = regex.exec(url)) != null) {
+                    params[results[1]] = results[2];
+                }
+                console.log(`${JSON.stringify(params)}`);
+
+                return params;
+            }
+        }
+
+    </script>
+
+    <body>
+
+    </body>
+
+</html>

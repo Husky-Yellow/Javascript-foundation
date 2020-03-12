@@ -1,0 +1,17 @@
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+td {
+	background-color: #ccc;
+	width: 100px;
+	height: 80px;
+	color: white;
+	text-align: center;
+	font-size: 20px;
+}
+
+.td_orange {
+	background-color: blue;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- <textarea name="" id="text1" cols="30" rows="10"></textarea> -->
+	<input type="text" name="" id="text1" value="1 2 3 4 5 6 7 8">
+	<button id="btn1" onclick="Trime()">撒大苏打</button>
+	<script>
+		function Trime(){
+			var ttt=document.getElementById("text1");
+		var bbb=document.getElementById("btn1");
+		// var line=ttt.value.split("\n"); //把文本框里的值换行分开
+		// var result="";
+		// for(var i=0;i<lines.length;i++){
+		// 	var string=lines[i].trim();
+		// 	result+=string+"-";
+		// }
+		console.log(ttt.value.trim());
+		}
+	</script>
+</body>
+</html>

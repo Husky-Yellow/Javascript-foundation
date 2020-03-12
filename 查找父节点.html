@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        // window.onload=function () {
+        //     var oUl=document.getElementById('ull');
+        //
+        //     alert(oUl.parentNode);
+        // }
+        window.onload=function () {
+            var aA =document.getElementsByTagName('a');
+            for (var i=0;i<aA.length;i++){
+                aA[i].onclick=function () {
+                    this.parentNode.style.display='none';
+                }  //这里this代表a；
+            } 
+        }
+    </script>
+</head>
+<body>
+<ul id="ull">
+    <li>dasdasa <a href="javascript:;">隐藏</a></li>
+    <li>bdffvbd <a href="javascript:;">隐藏</a></li>
+    <li>dastyrtyua <a href="javascript:;">隐藏</a></li>
+    <li>dasdasa <a href="javascript:;">隐藏</a></li>
+    <li>das <a href="javascript:;">隐藏</a></li>
+    <li>dasdasahuryy <a href="javascript:;">隐藏</a></li>
+</ul>
+</body>
+</html>

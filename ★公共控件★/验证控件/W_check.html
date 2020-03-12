@@ -1,0 +1,63 @@
+﻿
+<html>
+
+<head>
+    <script src='http://libs.baidu.com/jquery/1.10.2/jquery.min.js'></script>
+    <link rel="stylesheet" type="text/css" href="css/verify.css">
+    <script type="text/javascript" src="js/verify.js"></script>
+</head>
+
+<body>
+    <div class="W_check"></div>
+	<br/>
+	<br/>
+	<br/>
+    <div class="W_check2"></div>
+</body>
+</html>
+
+
+
+
+
+
+
+<script>
+//型态1
+    $('.W_check').slideVerify({
+        type: 1,		//类型：1为滑动验证、2为拼图验证
+        vOffset: 5,	//误差量，根据需求自行调整
+        barSize: {
+            width: '400px',
+            height: '36px',
+        },
+        ready: function () {
+        },
+        success: function () {
+            alert('验证成功！');
+            //......后续操作
+        },
+        error: function () {
+            //alert('验证失败！');
+        }
+    });
+
+//型态2
+    $('.W_check2').slideVerify({
+        type: 2,		//类型：1为滑动验证、2为拼图验证
+        vOffset: 5,	//误差量，根据需求自行调整
+        barSize: {
+            width: '400px',
+            height: '36px',
+        },
+        ready: function () {
+        },
+        success: function () {
+            alert('验证成功！');
+            //......后续操作
+        },
+        error: function () {
+            //alert('验证失败！');
+        }
+    });
+</script>

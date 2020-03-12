@@ -1,0 +1,127 @@
+﻿.promptWindow {width: 600px;float: left; border: 1px solid #aae4fb;background: #FFFFFF; position: fixed; left: 50%; top: 50%; margin-left: -300px; margin-top: -200px;  z-index: 99999;}
+.promptWindow_head {
+    width: 90%;
+    height: 50px;
+    border-bottom: 1px solid #0081E4;
+    margin: 0 auto;
+    position: relative;
+}
+
+.promptWindow_control {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 20px;
+    line-height: 36px;
+}
+
+.promptWindow_tit {
+    position: absolute;
+    left: 0px;
+    top: 15px;
+    font-size: 18px;
+    color: #999;
+}
+
+
+.promptWindow_close {
+    position: absolute;
+    right: 0px;
+    top: 15px;
+    /*font-size: 18px;*/
+    color: #999;
+    cursor: pointer;
+}
+.promptWindow_close:hover {
+        background: url(../images/zz_close.png) no-repeat center;
+    }
+
+.promptWindow_body {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.promptWindow_content1 {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    height: 260px;
+    font-size: 14px;
+    text-align: center;
+    display: table;
+}
+
+.promptWindow_content2 {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+.promptWindow_meng {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    opacity: 0.15;
+    z-index: 999;
+    background-color: rgb(0, 0, 0);
+
+}
+
+.promptWindow_btn {
+    background: #0081E4;
+    color: #FFFFFF;
+    text-align: center;
+    border: 0px;
+    cursor: pointer;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    font-size: 16px;
+}
+
+    .promptWindow_btn:hover {
+        background: #6279af;
+    }
+
+.promptWindow_btn2 {
+    font-family: 'Microsoft YaHei';
+    background: #FFFFFF;
+    color: #4185D9;
+    text-align: center;
+    border: 0px;
+    cursor: pointer;
+    padding: 12px 50px;
+    /*width: 200px;*/
+    /*height: 40px;*/
+    text-align: center;
+    font-size: 14px;
+}
+
+    .promptWindow_btn2:hover {
+        background: #4185D9;
+        color: #FFFFFF;
+    }
+
+.mydiv {
+    border: #cccccc 1px solid;
+    background: #fff;
+    color: #333;
+    filter: progid:DXImageTransform.Microsoft.Shadow(color=#909090,direction=120,strength=3); /*ie*/
+    -moz-box-shadow: 2px 2px 10px #909090; /*firefox*/
+    -webkit-box-shadow: 2px 2px 10px #909090; /*safari或chrome*/
+    box-shadow: 2px 2px 10px #909090; /*opera或ie9*/
+}
+.promptWindow table td {
+    text-align: center;
+    border: 0px;
+    height: 50px;
+    padding: 0 5px 0 5px;
+}
+
+.promptWindow table tbody {
+    font-size: 12px;
+    line-height: 12px;
+    word-break: break-all;
+    text-align: left;
+}

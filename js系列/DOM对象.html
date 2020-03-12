@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body><!-- 
+	<p id="id">hello</p>
+	<p id="id">hello</p>
+	<p id="id">hello</p>
+	<p id="id">hello</p>
+	<p id="id">hello</p>
+	<button onclick="demo()">按钮</button>
+	<script>
+		function demo(){
+		var mv= document.getElementById("id").innerHTML="world";
+		// nv.innerHTML="world";
+	}
+	</script> -->
+
+	<p id="id">hello</p>
+	<p id="id">hello</p>
+	<p id="id">hello</p>
+	<p id="id">hello</p>
+	<p id="id">hello</p>
+	<button onclick="demo()">按钮</button>
+	<script>
+		function demo(){
+			document.getElementById("id").innerHTML="world";
+		}
+	</script>
+</body>
+</html>
+绝对不要在文档加载完成之后使用document.write(). 这会覆盖掉文档

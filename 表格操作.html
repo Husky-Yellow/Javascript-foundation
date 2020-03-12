@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function()
+		{
+            var tab=document.getElementById('tab1');
+
+            var oldColor='';
+            // alert(tab.getElementsByTagName('tbody')[0].
+            // getElementsByTagName('tr')[0].
+            // getElementsByTagName('td')[0].innerHTML);
+
+            // alert(tab.tBodies[0].
+            // rows[0].
+            // cells[0].innerHTML);   //与上相同，用来简便语法 tBodies
+                                         //rows cells
+
+            for(var i=0;i<tab.tBodies[0].rows.length;i++)
+            {
+                tab.tBodies[0].rows[i].onmouseover=function ()
+                {
+					oldColor=this.style.background;
+                    this.style.background='green';
+                };
+                tab.tBodies[0].rows[i].onmouseout=function ()
+                {
+                    this.style.background=oldColor;
+                };
+
+                if(i%2)
+                {
+                    tab.tBodies[0].rows[i].style.background='';
+                }
+                else
+                {
+                    tab.tBodies[0].rows[i].style.background='#CCC';
+                }
+            }
+
+        }
+    </script>
+</head>
+<body>
+<table id="tab1" border="1" width="500">
+    <thead>
+        <td>ID</td>
+        <td>姓名</td>
+        <td>年龄</td>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>BLUE</td>
+            <td>27</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>日</td>
+            <td>27</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>了</td>
+            <td>27</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>狗</td>
+            <td>27</td>
+        </tr>
+    </tbody>
+</table>
+</body>
+</html>

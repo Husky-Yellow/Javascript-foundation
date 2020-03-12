@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            var oUl=document.getElementById('uii');
+
+            // //IE6~8 才能使用，其他不兼容
+            // oUl.firstChild.style.background='red';
+
+            //高级浏览器
+            //oUl.firstElementChild.style.background='red';
+
+            if (oUl.firstElementChild){
+                oUl.firstElementChild.style.background='red';
+            } else{
+                oUl.firstChild.style.background='red';
+            }    //循环进行判断
+        }
+    </script>
+</head>
+<body>
+<ui id="uii">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ui>
+</body>
+</html>

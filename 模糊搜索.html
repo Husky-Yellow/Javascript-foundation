@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        /*var str='abcdef';
+
+        alert(str.search('g'));   //找到并返回字符串出现的位置，如果没找到就-1 */
+        window.onload=function () {
+            var oTab=document.getElementById('tab1');
+            var oTxt=document.getElementById('name');
+            var oBtn=document.getElementById('btn1');
+
+            //     oBtn.onclick=function(){
+            //     for(var i=0;i<oTab.tBodies[0].rows.length;i++){
+            //         if(oTab.tBodies[0].rows[i].cells[1].innerHTML==oTxt.value)
+            //         {
+            //             oTab.tBodies[0].rows[i].style.background='yellow';
+            //         }else{
+            //             oTab.tBodies[0].rows[i].style.background='';
+            //
+            //         }
+            //     }
+            // }
+            oBtn.onclick=function () {
+                for(var i=0;i<oTab.tBodies[0].rows.length;i++)
+                {
+                    var sTab=oTab.tBodies[0].rows[i].cells[1].innerHTML.toLowerCase();
+                    var sTxt=oTxt.value.toLowerCase();
+                    if(sTab.search(sTxt)!=-1){    //调用txt里面的值  不等于-1就是找到了
+                        oTab.tBodies[0].rows[i].style.background='yellow';
+                    }
+                    else
+                    {
+                        oTab.tBodies[0].rows[i].style.background='';
+                    }    // .toLowerCase方法 是忽略大小写将其全部转换为小写的形式
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+姓名：<input id="name" type="text">
+<input id="btn1" type="button" value="搜索">
+<table id="tab1" border="1" width="500">
+    <thead>
+    <td>ID</td>
+    <td>姓名</td>
+    <td>年龄</td>
+    <td>操作</td>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td>BLUE</td>
+        <td>27</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>日</td>
+        <td>27</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>了</td>
+        <td>27</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>狗</td>
+        <td>27</td>
+        <td></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>

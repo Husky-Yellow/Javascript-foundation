@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            float: left;
+            border:1px solid black;
+            margin: 10px;
+        }
+    </style>
+    <script>
+        window.onload=function(){
+            var aDiv=document.getElementsByTagName('div');
+             //alert(aDiv.length); 说出页面元素的个数
+            // aDiv[0].style.background='red';//在指定元素中，做出指定的操作
+            for (var i=0;i<aDiv.length;i++){
+                aDiv[i].style.background='red';
+            }
+        }
+
+    </script>
+</head>
+<body>
+<div></div>
+<div></div>
+<div></div>
+</body>
+</html>

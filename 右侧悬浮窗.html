@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #div1 {
+            width: 100px;
+            height: 150px;
+            background: red;
+            position: absolute;
+            right: 0;
+            button:0;
+        }
+        #txt1{
+            position: fixed;
+            right: 0px;
+            top: 0px;
+        }
+    </style>
+    <script>
+        window.onscroll=function(){
+            var oDiv=document.getElementById('div1');
+            var scrollTop=document.documentElement.scrollTop||
+                document.body.scrollTop;
+
+            /*oDiv.style.top=document.documentElement.
+                clientHeight-oDiv.offsetHeight+scrollTop+'px';*/
+
+
+            /*至于浏览器窗口左下角*/
+           /* startMove(document.documentElement.
+                clientHeight-oDiv.offsetHeight+scrollTop); */
+
+           /*将DIV自动居中*/
+           /* oDiv.style.top=(document.documentElement.
+                clientHeight-oDiv.offsetHeight)/2+scrollTop+'px';*/
+            startMove(parseInt((document.documentElement.
+                clientHeight-oDiv.offsetHeight)/2+scrollTop));//将其转换成为整数 否则会出现抖动情况
+        };
+        var timer=null;
+
+        function startMove(iTarget) {
+
+            var oDiv=document.getElementById('div1');
+            clearInterval(timer);
+            timer=setInterval(function () {
+                var speed=(iTarget-oDiv.offsetTop)/8;
+                speed=speed>0?Math.ceil(speed):Math.floor(speed);
+
+                if(oDiv.offsetTop==iTarget){
+                    clearInterval(timer);
+                }else{
+                    document.title=iTarget;
+                    document.getElementById('txt1').value=oDiv.offsetTop;  //在文本框输出高度值
+                    oDiv.style.top=oDiv.offsetTop+speed+'px';
+                }
+            },30) ;
+        }
+    </script>
+</head>
+<body style="height:2000px">
+<input type="text" id="txt1" >
+<div id="div1"></div>
+</body>
+</html>

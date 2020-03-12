@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	div{
+		width: 350px;
+		height: 600px;
+		border:1px solid #000;
+		float: left;
+		margin-left: 20px;
+		margin-top: 20px;
+		padding:20px 20px 20px 20px;
+	}
+</style>
+<script>
+	function CreateNews(title){
+		var framediv = document.createElement("hr");
+		var note = document.getElementById("NoteValues");
+		note.appendChild(framediv);
+		var framediv = document.createElement("li");
+		framediv.innerHTML=title;
+		var note = document.getElementById("NoteValues");
+		note.appendChild(framediv);
+		var framediv = document.createElement("hr");
+		var note = document.getElementById("NoteValues");
+		note.appendChild(framediv);
+	}
+	function AddOntes(){
+		var title = document.getElementById("Title").value;
+		CreateNews(title);
+
+
+		var newItem=document.createElement("LI")
+		var textnode=document.createTextNode("title")
+			framediv.appendChild(textnode)
+
+		var list=document.getElementById("NoteValues")
+		list.insertBefore(framediv,list.childNodes[0]);
+	}
+</script>
+</head>
+<body>
+	<div>
+		<label for="Title">标题</label>
+		<input type="text" id="Title"><br>
+		<input type="button" value="Go!" onclick="AddOntes()">
+	</div>
+	<div id="NoteValues">
+
+	</div>	
+</body>
+</html>
+

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button onclick="myFunction()" id="Btn">添加</button>
+<!--<p id="i"></p>-->
+<div id = "shanchu"></div>
+
+<script>
+    i = 1;
+    function myFunction() {
+        var a = document.createElement("input");
+        a.type = "button";
+        a.id = i++;
+        // a.onclick="go(this)";
+        a.value = "sbxh";
+        var sis = document.getElementById("shanchu");
+        sis.appendChild(a);
+    }
+    // if(document.getElementById("Btn").getElementsByTagName("input")!=null){
+    //     // document.getElementById("1").addEventListener("click", function()
+    //     // {
+    //     //     document.getElementById("id").innerHTML = "监听";
+    //     // });
+    // }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>最简单的省市县级联</title>
+	<script type="text/javascript" src="../Region.js"></script>
+</head>
+
+<body>
+
+<span>*</span> 省
+<select id="sel_Province" style="width:80px" name="sel_Province">
+</select>
+<span>*</span> 市
+<select id="sel_City" name="sel_City">
+</select>
+<span>*</span> 县/区
+<select id="sel_County" name="sel_County">
+</select>
+
+<script>
+AreaSelector().init();
+
+function getValue(id)
+{
+	var sel = document.getElementById(id);
+	if	(sel && sel.options)
+	{
+		alert(sel.options[sel.selectedIndex].value);
+	}
+}
+
+function getText(id)
+{
+	var sel = document.getElementById(id);
+	if	(sel && sel.options)
+	{
+		alert(sel.options[sel.selectedIndex].text);
+	}
+}
+</script>
+<br><br>
+<input type="button" value="省选项值" onclick="getValue('sel_Province')" />
+<input type="button" value="省选项文本" onclick="getText('sel_Province')" />
+
+<input type="button" value="市选项值" onclick="getValue('sel_City')" />
+<input type="button" value="市选项文本" onclick="getText('sel_City')" />
+
+<input type="button" value="县/区选项值" onclick="getValue('sel_County')" />
+<input type="button" value="县/区选项文本" onclick="getText('sel_County')" />
+</body>
+</html>

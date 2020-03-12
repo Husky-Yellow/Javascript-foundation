@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width: 350px;
+			height: 600px;
+			border:1px solid #000;
+			float: left;
+			margin-left: 20px;
+			margin-top: 20px;
+			padding:20px 20px 20px 20px;
+			}
+	</style>
+	<script>
+		function CreateNews(Title,Content){
+			var framediv = document.createElement("p");
+			framediv.textContent=Title;   //更新元素内容或者替换
+			var note = document.getElementById("NoteValues");
+			note.appendChild(framediv);         // 往下接 向上insertBefore
+			var framediv = document.createElement("p");
+			framediv.textContent=Content;
+			var note = document.getElementById("NoteValues");
+			note.appendChild(framediv); 
+		}
+		function tijiao(){
+			var title = document.getElementById("Title").value; //定义title输出里面的值
+			var content = document.getElementById("Content").value;
+			//createElement() 方法可创建元素节点。此方法可返回一个 Element 对象
+			//appendChild 添加列表项
+			CreateNews(title,content);
+			var framediv = document.createElement("hr");
+			var note = document.getElementById("NoteValues");
+			note.appendChild(framediv);
+		}
+	</script>
+</head>
+<body>
+	<div>
+		<label for="Title">标题</label>
+		<input type="text" id="Title"><br>
+		<label for="Content">内容</label>
+		<input type="text" id="Content"><br>
+		<input type="button" value="提交!" onclick="tijiao()">
+	</div>
+	<div id="NoteValues"></div>
+	<script src="one.js"></script>
+</body>
+</html>

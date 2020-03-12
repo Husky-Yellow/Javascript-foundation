@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function () {
+            var oUl=document.getElementById('ull');
+
+            // alert(oUl.childNodes.length);  //IE6~8无问题
+
+            // for(var i=0;i<oUl.childNodes.length;i++){
+            //
+            //     if(oUl.childNodes[i].nodeType==1){
+            //         oUl.childNodes[i].style.background='red';
+            //     }
+            // }   //childNodes 代表子节点，相当于一个数组代表里面包含子节点的个数
+
+
+            for(var i=0;i<oUl.children.length;i++){
+
+                alert(oUl.children.length);
+            } //children 跟childNodes类似，但是只包括元素，不包括文本
+
+        }
+    </script>
+</head>
+<body>
+    <ul id="ull">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+<!--qweqweqeqe //文本节点-->
+<!--<span>wqeqweqweqwe    元素节点</span>-->
+</body>
+</html>

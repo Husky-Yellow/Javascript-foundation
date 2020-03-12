@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<input type="text">
+	<textarea name="" id="textbox" cols="30" rows="10"></textarea>
+	<div id="result"></div>
+	<script>
+		window.onload=function(){
+		var tb=document.getElementById("textBox");
+		tb.value="111\n222\n333\n444"; //?
+		var lines=tb.value.split("\n");  //每一行都是数组的一个元素 将行数分割
+		var result=document.getElementById("result");
+		result.innerHTML=lines[lines.length-1];
+		}
+	</script>
+</body>
+</html>

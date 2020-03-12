@@ -1,0 +1,108 @@
+/*  ��padding��border������ */
+* {
+    box-sizing: border-box;
+}
+
+/* ����List���margin��padding */
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* ����li��ʽ */
+ul li {
+    cursor: pointer;
+    position: relative;
+    padding: 12px 8px 12px 40px;
+    background: #eee;
+    font-size: 18px;
+    transition: 0.2s;
+    user-select: none; /*�û������ı�ѡ��*/
+}
+
+/* ����li��ɫ��ͬ��Ϊ������ */
+ul li:nth-child(odd) {
+    background: #f9f9f9;
+}
+
+/* hoverʱ����ɫ�ı� */
+ul li:hover {
+    background: #ddd;
+}
+
+/* ����ѡ�У������мӺ��� */
+ul li.checked {
+    background: #888;
+    color: #fff;
+    text-decoration: line-through;
+}
+
+/* Ϊ��ѡ�е�li���� ���Թ��� ͼ�� */
+ul li.checked::before {
+    content: '';
+    position: absolute;
+    border-color: #fff;
+    border-style: solid;
+    border-width: 0 2px 2px 0;
+    top: 10px;
+    left: 16px;
+    transform: rotate(45deg);
+    height: 15px;
+    width: 7px;
+}
+
+/* �رհ�ť��ʽ */
+.close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 12px 16px 12px 16px
+}
+
+.close:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+/* ͷ����ʽ */
+.header {
+    background-color: #f44336;
+    padding: 30px 40px;
+    color: white;
+    text-align: center;
+}
+
+/* ������� */
+.header:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* �������ʽ */
+input {
+    border: none;
+    width: 75%;
+    padding: 10px;
+    float: left;
+    font-size: 16px;
+    outline: 0;
+}
+
+/* ����ӡ���ť��ʽ */
+.addBtn {
+    padding: 9px 10px 8px;
+    width: 25%;
+    background: #d9d9d9;
+    color: #555;
+    float: left;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.addBtn:hover {
+    background-color: #bbb;
+}

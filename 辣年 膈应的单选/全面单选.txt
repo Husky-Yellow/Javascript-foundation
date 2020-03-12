@@ -1,0 +1,24 @@
+
+@*<form action="">
+
+    <input class="radio" name="age" type="radio"/>a<br>
+    <input class="radio" name="age" type="radio"/>b<br>
+    <input class="radio" name="age" type="radio"/>c
+</form>
+
+<script>
+    var radio = document.querySelectorAll('.radio');
+
+    radio.forEach(function(r) {
+        var isChecked = false
+
+        r.addEventListener('click', function () {
+            if (this.checked === true && isChecked === false) {
+                isChecked = true
+            } else {
+                this.checked = false
+                isChecked = false
+            }
+        })
+    })
+</script>*@

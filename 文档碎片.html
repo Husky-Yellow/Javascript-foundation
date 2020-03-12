@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        window.onload=function(){
+            var oU1=document.getElementById('ull');
+            var farm=document.createDocumentFragment();  //定义一个文档碎片
+
+            for( var i=0;i<100;i++){
+                var li=document.createElement('li');
+
+                farm.appendChild(li);
+            }
+            oU1.appendChild(farm);
+        }
+    </script>
+</head>
+<body>
+<ul id="ull">
+    <li></li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="result"></div>
+<script>
+    var ilike=20;
+    var oldStr="What the fuck123456";
+    var diff=ilike-oldStr.length;
+    var filler="&copy;";
+    for (var i=0;i<diff;i++){
+        oldStr=filler+oldStr;
+    }
+    document.getElementById("result").innerHTML=oldStr;
+</script>
+</body>
+</html>

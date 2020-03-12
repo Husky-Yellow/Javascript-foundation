@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+
+        var aResult=[];  //这个空数组的作用就是可以把每一个所找到的元素归类到里面
+
+        function getByClass(oParent,sClsaa){
+            var aEle = oParent.getElementsByTagName('*');
+
+            for(var i =0;i<aEle.length;i++){
+                if(aEle[i].className==sClsaa){
+                    aResult.push(aEle[i]);   //将数组返回出来
+                }
+            }
+            return aResult;
+        }
+        window.onload=function(){
+            var UL=document.getElementById('uii');
+            var aBox =getByClass(UL,'box');
+
+            for(var i=0;i<aBox.length;i++){
+                aBox[i].style.background='red';
+            }
+        }
+
+        /*原始方法*/
+        /*window.onload=function () {
+            var UL=document.getElementById('uii');
+            var aLi=UL.getElementsByTagName('li');
+
+            for (var i=0;i<aLi.length;i++){
+                if (aLi[i].className=='box'){
+                    aLi[i].style.background='red';
+                }
+            }
+        }*/
+    </script>
+</head>
+<body>
+<ui id="uii">
+    <li class="box"></li>
+    <li class="box"></li>
+    <li></li>
+    <li></li>
+    <li class="box"></li>
+    <li></li>
+</ui>
+</body>
+</html>

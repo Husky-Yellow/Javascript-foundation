@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0,
+    maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .div{
+            width: 300px;
+            height: 400px;
+            border: 1px solid #000;
+            float: left;
+            margin-left: 20px;
+            margin-top: 20px;
+            padding: 20px 20px 20px 20px;
+        }
+        .haha{
+            width: 100px;
+            height: 300px;
+            /* border: 1px solid #000; */
+            float:right;
+            margin-left: 20px;
+            padding: 20px 20px 20px 20px;
+        }
+        .hahaa{
+            width: 100px;
+            height: 300px;
+            float: left;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="div" id="aaa">
+        <div class="hahaa" id="haha">
+        <ul id="myList"></ul>
+        </div>
+        <div class="haha" id="shanchu">
+            <button onclick="del()">删除</button>
+        </div>
+    </div>
+    <div class="div" id="qwer">
+        <label for="Content">内容:</label>
+        <input type="type" id="content">
+        <br><br>
+        <button onclick="myFunction()" id="Btn">添加</button>
+    </div>
+    <script>
+        i = 1;
+        function myFunction() {
+            var a = document.createElement("input");
+                a.type = "button";
+                a.id = i++;
+                a.value = "删除啊";
+            var sis = document.getElementById("shanchu");
+                sis.appendChild(a);
+            var ddd = document.getElementById("content").value;
+            if (document.getElementById("myList").getElementsByTagName("p") != null) {
+                var newItem = document.createElement("p");
+                    newItem.textContent = ddd;
+                var list = document.getElementById("myList");
+                    list.insertBefore(newItem, list.childNodes[0]);
+            }else if(document.getElementById("myList").getElementsByTagName("p") == null){
+                var newItem = document.createElement("p");
+                    newItem.textContent = ddd;
+                var list = document.getElementById("myList");
+                    list.insertBefore(newItem, list.childNodes[0]);
+                var framediv = document.createElement("hr");
+                var note = document.getElementById("NoteValues");
+                    note.appendChild(framediv)
+            }
+        }
+        function del() {
+            var list = document.getElementById("myList");
+            var p = document.getElementsByTagName('p');
+            var ppc = document.getElementsByTagName('p').length - 1;
+                list.removeChild(list.childNodes[ppc]);
+        }
+    </script>
+</body>
+</html>

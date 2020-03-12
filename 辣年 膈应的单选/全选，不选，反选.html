@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        window.onload=function(){
+            var aBtn = document.getElementById('btn1');
+            var aDiv =document.getElementById('div1');
+            var aBtn2 = document.getElementById('btn2');
+            var aBtn3 = document.getElementById('btn3');
+            var asd = aDiv.getElementsByTagName("input");
+            aBtn.onclick=function () {
+                for (var i=0;i<asd.length;i++){
+                    asd[i].checked=true;
+                }
+            }
+            aBtn2.onclick=function () {
+                for (var i=0;i<asd.length;i++){
+                    asd[i].checked=false;
+                }
+            }
+           aBtn3.onclick=function(){
+                for (var i=0;i<asd.length;i++) {
+                    if (asd[i].checked==true){
+                        asd[i].checked=false;
+                    } else{
+                        asd[i].checked=true;
+                    }
+                }
+           }
+        }
+    </script>
+</head>
+<body>
+<input id="btn1" type="button" value="全选">
+<input id="btn2" type="button" value="不选">
+<input id="btn3" type="button" value="反选">
+<div id="div1">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+    <input type="checkbox">
+</div>
+
+</body>
+
+</html>

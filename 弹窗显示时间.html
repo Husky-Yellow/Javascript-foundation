@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		window.onload=function(){
+			var dtstr="2009-10-15T14:42:51Z";
+			dtstr = dtstr.replace(/\D/g," "); //   \D匹配非数字字符  把非数字字符替换成空格
+			var dtcomps = dtstr.split(" "); //按照空格的方式去分割
+			dtcomps[1]--;  ////在基于1的ISO 8610月份和基于0的日期格式之间转换
+			var convdt = new Date(Date.UTC(dtcomps[0],dtcomps[1],dtcomps[2],dtcomps[3],dtcomps[4],dtcomps[5]));
+				alert(convdt);
+		}  ////ISO 8610格式的日期转换为Date对象可接受的一种形式
+	</script>
+</body>
+<div id="date"></div>
+</html>

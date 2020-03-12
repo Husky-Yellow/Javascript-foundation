@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script type="text/javascript">
+    function clearradio() { //取消radio的选择  
+        var x = document.getElementsByName("brand"); //获取所有name=brand的元素  
+        for (var i = 0; i < x.length; i++) { //对所有结果进行遍历，如果状态是被选中的，则将其选择取消  
+            if (x[i].checked == true) {
+                x[i].checked = false;
+            }
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <input type="radio" name="brand" id="brand" value="1" />
+    <br />
+    <input type="radio" name="brand" id="brand" value="2" />
+    <br />
+    <input type="radio" name="brand" id="brand" value="3" />
+    <br />
+    <br />
+    <input type="button" onclick="clearradio()" value="点击取消选择" />
+</body>
+
+</html>

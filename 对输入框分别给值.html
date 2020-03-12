@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="asd">
+	<input type="text">
+	<input type="text">
+	<input type="text">
+	</div>
+	<input type="text">
+	<input type="text">
+	<input type="text">
+	<button onclick="SBXH()">GO</button>
+
+	<script>
+		function SBXH() {
+			var inpp = document.getElementsByTagName("input")
+			for (var i in inpp) {
+				inpp[i].value = "123"
+				if (i==2) {break;} //跳出for循环 也可不加div 将0改为三
+				
+			}
+		}
+		function SBXHSS() {
+			var inpp = document.getElementById("asd").getElementsByTagName("input")
+			for (var i in inpp) {
+				inpp[i].value = "123"
+				if (i==0) {break;} //跳出for循环 也可不加div 将0改为三
+				
+			}
+		}
+	</script>
+</body>
+</html>

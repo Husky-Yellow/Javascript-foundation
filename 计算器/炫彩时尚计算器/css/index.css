@@ -1,0 +1,115 @@
+/* 
+B站视频地址：
+https://www.bilibili.com/video/av76586089/
+喜马拉雅关注音频：《听学前端开发技术》
+ */
+* {
+	margin: 0;
+	padding: 0;
+}
+ 
+ul {
+	list-style: none;
+}
+body {
+	height: 100vh;
+	background: linear-gradient(45deg,#3498db,#9b59b6);
+}
+
+a {
+	width: 40px;
+	height: 40px;
+	display: block;
+	font-family: dotum;
+	font-weight: bold;
+	color: white;
+	border-radius: 50%;
+	background: rgb(79,80,84);
+	text-align: center;
+	line-height: 40px;
+	text-decoration: none;
+	margin: 10px 7px;
+	float: left; 
+}
+a:hover {
+	color: #9b59b6;
+}
+#equals {
+	height: 40px;
+	width: 94px;
+	display: block;
+	border-radius: 20px;
+	background: linear-gradient(-90deg,#3498db,#9b59b6);
+}
+
+.content {
+	height: 420px;
+	width: 240px;
+	padding: 0 12px;
+	background: rgb(35,34,39);
+	border-radius: 15px;
+	position: absolute; 
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	margin: auto auto;
+	box-sizing: border-box;
+	box-shadow: 0 0 20px black;
+}
+nav {
+	position: absolute;
+}
+.circle li {
+	width: 8px;
+	height: 8px;
+	border-radius: 50%;
+	float: left;
+	margin: 10px 2px;
+}
+.circle li:first-child {
+	background: rgb(253,101,87);
+}
+.circle li:nth-child(2) {
+	background: rgb(255,191,12);
+}
+.circle li:last-child {
+	background: rgb(4,207,45);
+}
+
+.black {
+	background: rgb(35,34,39); 
+	font-size: 18px;
+/* 	background: rgb(79,80,84); */
+}
+.black:hover  {
+	box-sizing: border-box;
+	border: #3498DB 1px solid;
+	transition: .5s;
+}
+
+header {
+	height: 115px; 
+	position: relative;
+}
+header span {
+	position: absolute;
+	bottom: 0;
+	height: 1px;
+	width: 100%;
+	background: linear-gradient(90deg,#3498db,#9b59b6); 
+}
+.result {
+	color: white;
+	font-size: 34px; 
+	position: absolute;
+	right: 10px;
+	bottom: 10px;
+}
+.computed {
+	color: dimgrey; 
+	position: absolute;
+	right: 10px;
+	bottom: 60px;
+}
+

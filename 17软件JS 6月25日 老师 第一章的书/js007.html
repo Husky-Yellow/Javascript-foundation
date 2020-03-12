@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<textarea name="" id="textBox" cols="30" rows="10"></textarea>
+<script>
+    window.onload=function () {
+    var tb=document.getElementById("textBox");
+    tb.value="111\n222\n333\n444";
+    var lines=tb.value.split("\n");
+    var result=document.getElementById("result");
+    result.innerHTML=lines[lines.length-1];
+    }
+</script>
+
+<div id="result"></div>
+</body>
+</html>

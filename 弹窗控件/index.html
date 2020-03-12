@@ -1,0 +1,26 @@
+﻿<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="js/promptWindow.js"></script>
+<script>
+    $(function () {
+
+        //案例开始
+        var a = perwin.open({
+            title: "我是标题",
+            content: '<p style="text-align:center;font-size:16px;">发送成功!</p>',
+            size: ['600', '230'],
+            css: "css/",
+            src: "images/",
+            align:"left",
+            fontsize:null,
+            submit: function () {
+                promptWindow.close(a);
+            },
+            cancel:function () {
+                promptWindow.close(a);
+            },
+	        cancelname: "返回"
+        });
+        //案例结束
+
+    })
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="app">
+        <button v-on:click="num++">click me</button>
+        <button v-on:click="num--">click me</button>
+        <span>{{num}}</span>
+    </div>
+    <script src="vue.min.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                num: 0,
+                // message: '6',
+                data: {
+                    // name: '',
+                    // gender: '',
+                    // interest: [],
+                    // identity: ''
+                },
+                // selected: 'A',
+                // options: [
+                //     { text: 'One', value: 'A' },
+                //     { text: 'Two', value: 'B' },
+                //     { text: 'Three', value: 'C' }
+                // ]
+            },
+            methods: {
+                add: function (inc) {
+                    this.num += inc;
+                },
+                remove: function (dec) {
+                    this.num -= dec;
+                },
+            }
+        })
+    </script>
+</body>
+
+</html>

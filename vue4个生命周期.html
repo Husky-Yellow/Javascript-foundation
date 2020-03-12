@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/vue/2.1.3/vue.js"></script>
+</head>
+
+<body>
+
+    <div id="app">
+        <p>{{ message }}</p>
+        beforeCreate() 在实例创建之间执行，数据未加载状态
+        created() 在实例创建、数据加载后，能初始化数据，dom渲染之前执行
+        beforeMount() 虚拟dom已创建完成，在数据渲染前最后一次更改数据
+        mounted() 页面、数据渲染完成，真实dom挂载完成
+        beforeUpadate() 重新渲染之前触发
+        updated() 数据已经更改完成，dom 也重新 render 完成,更改数据会陷入死循环
+        beforeDestory() 和 destoryed() 前者是销毁前执行（实例仍然完全可用），后者则是销毁后执行
+    </div>
+
+    <script type="text/javascript">
+
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: "yellow is boy"
+            },
+            beforeCreate: function () {
+                console.group('beforeCreate 创建前状态===============》');
+                console.log("%c%s", "color:red", "el     : " + this.$el); //undefined
+                console.log("%c%s", "color:red", "data   : " + this.$data); //undefined 
+                console.log("%c%s", "color:red", "message: " + this.message)
+            },
+            created: function () {
+                console.group('created 创建完毕状态===============》');
+                console.log("%c%s", "color:red", "el     : " + this.$el); //undefined
+                console.log("%c%s", "color:red", "data   : " + this.$data); //已被初始化 
+                console.log("%c%s", "color:red", "message: " + this.message); //已被初始化
+            },
+            beforeMount: function () {
+                console.group('beforeMount 挂载前状态===============》');
+                console.log("%c%s", "color:red", "el     : " + (this.$el)); //已被初始化
+                console.log(this.$el);
+                console.log("%c%s", "color:red", "data   : " + this.$data); //已被初始化  
+                console.log("%c%s", "color:red", "message: " + this.message); //已被初始化  
+            },
+            mounted: function () {
+                console.group('mounted 挂载结束状态===============》');
+                console.log("%c%s", "color:red", "el     : " + this.$el); //已被初始化
+                console.log(this.$el);
+                console.log("%c%s", "color:red", "data   : " + this.$data); //已被初始化
+                console.log("%c%s", "color:red", "message: " + this.message); //已被初始化 
+            },
+            beforeUpdate: function () {
+                console.group('beforeUpdate 更新前状态===============》');
+                console.log("%c%s", "color:red", "el     : " + this.$el);
+                console.log(this.$el);
+                console.log("%c%s", "color:red", "data   : " + this.$data);
+                console.log("%c%s", "color:red", "message: " + this.message);
+            },
+            updated: function () {
+                console.group('updated 更新完成状态===============》');
+                console.log("%c%s", "color:red", "el     : " + this.$el);
+                console.log(this.$el);
+                console.log("%c%s", "color:red", "data   : " + this.$data);
+                console.log("%c%s", "color:red", "message: " + this.message);
+            },
+            beforeDestroy: function () {
+                console.group('beforeDestroy 销毁前状态===============》');
+                console.log("%c%s", "color:red", "el     : " + this.$el);
+                console.log(this.$el);
+                console.log("%c%s", "color:red", "data   : " + this.$data);
+                console.log("%c%s", "color:red", "message: " + this.message);
+            },
+            destroyed: function () {
+                console.group('destroyed 销毁完成状态===============》');
+                console.log("%c%s", "color:red", "el     : " + this.$el);
+                console.log(this.$el);
+                console.log("%c%s", "color:red", "data   : " + this.$data);
+                console.log("%c%s", "color:red", "message: " + this.message)
+            }
+        })
+    </script>
+</body>
+
+</html>

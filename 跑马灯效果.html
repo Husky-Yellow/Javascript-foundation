@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+        <input type="button" value="1" @click='lang'>
+        <input type="button" value="2" @click='stop'>
+        <h4>{{ msg }}</h4>
+    </div>
+    <script>    
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                msg: "啥都不会小黄狗,一事无成张照坤!",
+                intervalId: null ,//在data上定义 定时器ID
+            },
+            methods:{
+                lang(){
+                        // 这个this指向问题所以定义 一个_this
+                        // var _this = this;
+                    // setInterval(function(){
+                    //     //获取到头的第一个字符
+                    //  var  start = _this.msg.substring(0,1)
+                    //  //获取后面的所有字符
+                    //  var  end = _this.msg.substring(1)
+                    //  //重新拼接新的字符串,并复制给this.msg
+                    //  _this.msg = end + start
+                    // },400)
+
+                    // 间隔函数 间隔函数内部的this与外部的this保持一致
+
+                        if(this.intervalId ) return;
+
+                  this.intervalId = setInterval(() => {
+                      var start = this.msg.substring(0,1)
+                      var end = this.msg.substring(1)
+                      this.msg = end + start
+                  },500) 
+                    
+
+
+                },
+                stop(){//停止定时器
+                    clearInterval(this.intervalId)
+                    this.intervalId = null;
+                }   ,
+            
+            }
+        })
+    //分析:
+    // 1. 给1按钮绑定一个点击事件 v-on @
+    // 2. 在按钮的事件处理函数中,写相关的业务逻辑代码:拿到msg字符串,然后调用字符串的
+    //     substring 来进行字符串的截取操作,把 第一个字符截取出来,放到最后一个位置即可;
+    // 3. 为了实现点击
+    </script>
+</body>
+</html>

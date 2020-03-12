@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>demo</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+</head>
+
+<body>
+    <div id="test">
+        <select v-model="A">
+            <option v-for="yx in YX">
+                {{yx.text}}
+            </option>
+        </select>
+
+        <select>
+            <option v-for="zy in selection">
+                {{zy.text}}
+            </option>
+        </select>
+    </div>
+
+    <script type="text/javascript">
+        var vm = new Vue({
+            el: '#test',
+            data: {
+                A: '',
+                YX: [
+                    {
+                        text: '计信院',
+                        ZY: [
+                            { text: '软件工程' },
+                            { text: '计算机科学与技术' },
+                            { text: "信息安全" },
+                        ]
+                    },
+                    {
+                        text: '商学院',
+                        ZY: [
+                            { text: '旅游管理' },
+                            { text: '工商管理' },
+                            { text: "行政管理" },
+                        ]
+                    },
+                ]
+            },
+            computed: {
+                selection: function () {
+                    for (var i = 0; i < this.YX.length; i++) {
+                        if (this.YX[i].text === this.A) {
+                            return this.YX[i].ZY;
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

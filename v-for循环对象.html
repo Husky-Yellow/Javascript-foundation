@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>v-for循环普通数组</title>
+        <!-- 引入vue.js -->
+        <script src="vue.min.js"></script>
+    </head>
+    <body>
+        <div id='app'>
+            <!-- 注意:在遍历对象身上的键值对的时候 除了有val key , 在第三个位置还有一个索引 -->
+            <p v-for="(val,key,i) in user">值是:{{ val }}---键是:{{key}}---索引:{{i}}</p>
+        </div>
+    
+    </body>
+    <script>
+        // 实例化vue对象
+        var vm = new Vue({
+            // 绑定对象
+            el:'#app',
+            data:{
+                user:
+                    {   
+                        id:1,
+                        name:'a',
+                        gender:'男'
+                    }
+                },
+            methods:{
+                
+            }
+        })
+    </script>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>过滤器的基本使用</title>
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <script src="vue.min.js"></script>
+</head>
+<body>
+    <div id="app">
+      <p>{{ msg | msgFormat}}</p>
+      <p>{{ msg | msgFormat('懂') }}</p>
+      <p>{{ msg | msgFormat('懂' , '行') }}</p>
+      <p>{{ msg | msgFormat('懂' , '行') |test }}</p>
+    </div>
+    <script>
+        // 全局过滤器必须在vue函数前面,否则无法运行,可以多次调用
+        // 定义一个vue全局的过滤器,名字叫做msgFormat
+        Vue.filter('msgFormat',function (msg) {
+            // 字符串的replace方法,第一个参数,除了可写一个字符串之外,还可以定义一个正则
+           return msg.replace(/会/g,'懂')
+        //    /会/g 指的全局匹配
+          })
+        // 传值的方法二
+        // 第一个值是管道符前面的值,第二个是后面的
+        // Vue.filter('msgFormat',function(msg,arg){
+        //     return msg.replace(/会/g, arg)
+        // })
+        // 传值的方法二(船多个值)
+        // Vue.filter('msgFormat',function(msg,arg,arg2){
+        //     return msg.replace(/会/g, arg+arg2)
+        // })
+
+        // 多次调用
+        Vue.filter('test',function(msg){
+            return msg  + '!!!!'
+        })
+
+      var vm = new Vue({
+          el: '#app',
+          data:{
+            msg:'啥也不会张照坤,一事无成小黄狗.啥也不会张照坤,一事无成小黄狗.'
+          },
+          methods:{
+             
+            }
+      });
+    </script>
+</body>
+</html>

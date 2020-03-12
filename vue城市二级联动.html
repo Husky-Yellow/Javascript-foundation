@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+</head>
+
+<body>
+    <div id="test">
+        <select v-model="selected">
+            <option>
+                aaaaaa
+            </option>
+            <option v-for="yx in YX" :value="yx.text">
+                {{yx.text}}
+            </option>
+        </select>
+        <select>
+            <option>
+                {{zy.text}}
+            </option>
+            <option v-for="zy in selection" :value="zy.text">
+                {{zy.text}}
+            </option>
+        </select>
+    </div>
+
+</body>
+<script>
+    new Vue({
+        el: '#test',
+        data: {
+            selected: '计信院',
+            YX: [{
+                text: '计信院',
+                ZY: [{
+                    text: '软件工程'
+                }, {
+                    text: '计算机科学与技术'
+                }, {
+                    text: "信息安全"
+                },]
+            }, {
+                text: '商学院',
+                ZY: [{
+                    text: '旅游管理'
+                }, {
+                    text: '工商管理'
+                }, {
+                    text: "行政管理"
+                },]
+            },]
+        },
+        computed: {
+            selection: {
+                get: function () {
+                    var that = this;
+                    return this.YX.filter(function (item) {
+                        return item.text == that.selected;
+                    })[0].ZY;
+                }
+            }
+        }
+    });
+</script>
+
+</html>

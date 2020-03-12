@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset='utf-8'>
+        <title>v-for循环普通数组</title>
+        <!-- 引入vue.js -->
+        <script src="vue.min.js"></script>
+    </head>
+    <body>
+        <div id='app'>
+            <p>{{list[0]}}</p>
+            <p>{{list[1]}}</p>
+            <p>{{list[4]}}</p>
+            <br>
+            <br>
+            <p v-for="item in list">{{item}}</p>
+            <br>
+            <br>
+            <p v-for="(item,i) in list">索引值:{{i}}---每一项:{{item}}</p>
+        </div>
+    
+    </body>
+    <script>
+        // 实例化vue对象
+        var vm = new Vue({
+            // 绑定对象
+            el:'#app',
+            data:{
+                list:[1,2,3,4,5,6]
+            },
+            methods:{
+                
+            }
+        })
+    </script>
+</html>

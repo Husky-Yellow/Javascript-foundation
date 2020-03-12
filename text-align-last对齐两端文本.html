@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text-align-last对齐两端文本</title>
+    <style>
+        .justify-text li {
+            margin-top: 5px;
+            padding: 0 20px;
+            width: 100px;
+            height: 40px;
+            background-color: #f66;
+            line-height: 40px;
+            /*  text-align-last: */
+            text-align-last: justify;
+            color: #fff;
+        }
+
+        .justify-text li:first-child {
+            margin-top: 0;
+        }
+        .a{
+            display: flex;
+            flex-direction: column;
+            width: 100px;
+        }
+        .a>span{
+            background-color: #f66;
+            text-align-last: justify;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bruce flex-ct-x">
+        <ul class="justify-text">
+            <li>账号</li>
+            <li>密码</li>
+            <li>电子邮件</li>
+            <li>通讯地址</li>
+        </ul>
+    </div>
+
+    <div class="a">
+        <span>账号</span>
+        <span>通讯地址</span>
+    </div>
+</body>
+
+</html>

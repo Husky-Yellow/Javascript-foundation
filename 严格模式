@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>严格模式的this的指向</title>
+</head>
+
+<body>
+    <button onclick="alert((function(){'use strict'; return this})());">
+        内联事件处理1
+    </button>
+    <!-- 警告窗口中的字符为undefined -->
+
+    <button onclick="'use strict'; alert(this.tagName.toLowerCase());">
+        内联事件处理2
+    </button>
+    <!-- 警告窗口中的字符为button -->
+</body>
+<script>
+    window.onload = function () {
+        'use strict';
+        console.log(this);
+        // 严格模式
+        function whatIsThis2() {
+
+            console.log(this);
+        }
+        whatIsThis2(); // undefined
+
+        //对象的函数（方法）中的this
+        var obj = new Object();
+        obj.a = 'o.a';
+        obj.f5 = function () {
+            return this.a;
+        }
+        console.log(obj.f5());
+
+        // 构造函数的this
+        function constru() {
+            this.a = 'constru.a';
+            this.f2 = function () {
+                console.log(this.b);
+                return this.a;
+            }
+        }
+        var o2 = new constru();
+        o2.b = 'o2.b';
+        console.log(o2.f2());
+
+        // 事件处理函数中的this
+        function blue_it(e) {
+            if (this === e.target) {
+                this.style.backgroundColor = "#00f";
+            }
+        }
+    }
+
+</script>
+
+</html>

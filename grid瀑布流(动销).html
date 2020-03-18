@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid瀑布流</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #eceffc;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .masonry {
+            --block-color: #434a54;
+            --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+            grid-auto-rows: 50px;
+            gap: 16px;
+            width: 960px;
+        }
+
+        .masonry__item {
+            position: relative;
+        }
+
+        .masonry__item[short] {
+            grid-row: span 2;
+        }
+
+        .masonry__item[tall] {
+            grid-row: span 3;
+        }
+
+        .masonry__item[taller] {
+            grid-row: span 4;
+        }
+
+        .masonry .block-reveal {
+            overflow: hidden;
+        }
+
+        .masonry .block-reveal img {
+            width: 100%;
+            height: 100%;
+            transform: scale(0);
+            animation: scale-in 0.9s calc(0.4s + 0.1s * var(--i)) var(--ease-out-cubic) forwards;
+        }
+
+        .masonry .block-reveal::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            background: var(--block-color);
+            opacity: 0;
+            transform: translateX(101%);
+            animation: slide-left 0.8s calc(0.1s * var(--i)) var(--ease-out-cubic) forwards;
+        }
+
+        @keyframes slide-left {
+            0.001% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            100% {
+                opacity: 1;
+                transform: translateX(-101%);
+            }
+        }
+
+        @keyframes scale-in {
+            from {
+                transform: scale(0.8);
+            }
+
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .js-loading *,
+        .js-loading *::before,
+        .js-loading *::after {
+            animation-play-state: paused !important;
+        }
+
+        .js-loading .loading * {
+            animation-play-state: running !important;
+        }
+
+        .loading {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            display: flex;
+            color: black;
+            font-size: 2rem;
+            font-family: Lato, sans-serif;
+            letter-spacing: 0.5rem;
+            text-transform: uppercase;
+            transform: translate(-50%, -50%);
+            transition: 0.3s;
+        }
+
+        .loading span {
+            animation: shrink 2s infinite;
+        }
+
+        @keyframes shrink {
+            50% {
+                transform: scale(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="masonry">
+        <div class="masonry__item block-reveal">
+            <img src="https://picsum.photos/200/200?image=100" alt="img" />
+        </div>
+        <div class="masonry__item block-reveal">
+            <img src="https://picsum.photos/200/200?image=200" alt="img" />
+        </div>
+        <div class="masonry__item block-reveal">
+            <img src="https://picsum.photos/200/200?image=300" alt="img" />
+        </div>
+        <div class="masonry__item block-reveal">
+            <img src="https://picsum.photos/200/200?image=400" alt="img" />
+        </div>
+        <div class="masonry__item block-reveal">
+            <img src="https://picsum.photos/200/200?image=500" alt="img" />
+        </div>
+        <div class="masonry__item block-reveal">
+            <img src="https://picsum.photos/200/200?image=600" alt="img" />
+        </div>
+        <div class="masonry__item block-reveal">
+            <img src="https://picsum.photos/200/200?image=700" alt="img" />
+        </div>
+        <div class="masonry__item block-reveal">
+            <img src="https://picsum.photos/200/200?image=800" alt="img" />
+        </div>
+        <div class="masonry__item block-reveal">
+            <img src="https://picsum.photos/200/200?image=900" alt="img" />
+        </div>
+        <div class="masonry__item block-reveal">
+            <img src="https://picsum.photos/200/200?image=1000" alt="img" />
+        </div>
+        <div class="masonry__item block-reveal">
+            <img src="https://picsum.photos/200/200?image=25" alt="img" />
+        </div>
+        <div class="masonry__item block-reveal">
+            <img src="https://picsum.photos/200/200?image=50" alt="img" />
+        </div>
+        <div class="masonry__item block-reveal">
+            <img src="https://picsum.photos/200/200?image=75" alt="img" />
+        </div>
+        <div class="masonry__item block-reveal">
+            <img src="https://picsum.photos/200/200?image=100" alt="img" />
+        </div>
+        <div class="masonry__item block-reveal">
+            <img src="https://picsum.photos/200/200?image=125" alt="img" />
+        </div>
+        <div class="masonry__item block-reveal">
+            <img src="https://picsum.photos/200/200?image=175" alt="img" />
+        </div>
+        <div class="masonry__item block-reveal">
+            <img src="https://picsum.photos/200/200?image=200" alt="img" />
+        </div>
+        <div class="masonry__item block-reveal">
+            <img src="https://picsum.photos/200/200?image=225" alt="img" />
+        </div>
+        <div class="masonry__item block-reveal">
+            <img src="https://picsum.photos/200/200?image=250" alt="img" />
+        </div>
+        <div class="masonry__item block-reveal">
+            <img src="https://picsum.photos/200/200?image=275" alt="img" />
+        </div>
+    </div>
+    <div class="loading">Loading</div>
+
+</body>
+<script>
+    "use strict";
+    var sizes = ["short", "tall", "taller"];
+    var sample = function (arr) { return arr[Math.floor(Math.random() * arr.length)]; };
+    var masonry = document.querySelector(".masonry");
+    masonry.style.opacity = "0";
+    var masonryItems = document.querySelectorAll(".masonry__item");
+    masonryItems.forEach(function (item, i) {
+        item.style.setProperty("--i", "" + (i + 1));
+        item.setAttribute(sample(sizes), "");
+    });
+    var loading = document.querySelector(".loading");
+    var letters = loading.textContent.split("");
+    loading.textContent = "";
+    letters.forEach(function (letter, i) {
+        var span = document.createElement("span");
+        span.textContent = letter;
+        span.style.animationDelay = i / 10 + "s";
+        loading.append(span);
+    });
+    document.body.classList.add("js-loading");
+    window.addEventListener("load", function () {
+        document.body.classList.remove("js-loading");
+        loading.style.opacity = "0";
+        loading.style.visibility = "hidden";
+        masonry.style.opacity = "1";
+    }, false);
+
+</script>
+
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <style>
+        .masonry {
+            -webkit-column-count: 3;
+            /* Safari 和 Chrome */
+            column-count: 3;
+            -moz-column-gap: 2em;
+            -webkit-column-gap: 2em;
+            column-gap: 2em;
+            width: 80%;
+            margin: 2em auto;
+        }
+
+        .item {
+            padding: 2em;
+            margin-bottom: 2em;
+            -webkit-column-break-inside: avoid;
+            break-inside: avoid;
+            background: #f60;
+        }
+
+        @media screen and (max-width: 800px) {
+            .masonry {
+                column-count: 2; 
+            }
+        }
+
+        @media screen and (max-width: 500px) {
+            .masonry {
+                column-count: 1; 
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="app">
+        <h2>v-for循环</h2>
+        <div class="masonry">
+            <div class="item" v-for="(item,index) in 17" :key="index">
+             {{index}}
+             <span v-if="index>=4" >html 的结构依旧和上面的 Multi-columns 展示的一样。只是在 .masonry 容器中使用的 CSS 不一样：
+
+                在 .masonry 中是通过采用 flex-flow 来控制列，并且允许它换行。
+                
+                这里关键是容器的高度，我这里要显式的设置 height 属性，当然除了设置 px 值，还可以设置100vh，让 .masonry 容器的高度和浏览器视窗高度一样。
+                
+                记住，这里height可以设置成任何高度值（采用任何的单位），但不能不显式的设置，如果没有显式的设置，容器就无法包裹住项目列表。</span> 
+             <span v-else>bbbbb</span> 
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+        var vm = new Vue({
+        // 绑定对象
+        el: '#app',
+        data: {
+        },
+        methods: {
+
+        }
+    })
+</script>
+</html>

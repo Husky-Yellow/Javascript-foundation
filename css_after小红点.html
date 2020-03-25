@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <style>
+    .red-point {
+      position: relative;
+    }
+
+    .red-point::before {
+      content: " ";
+      border: 3px solid red;
+      /*设置红色*/
+      border-radius: 3px;
+      /*设置圆角*/
+      position: absolute;
+      z-index: 1000;
+      right: 0%;
+      margin-right: -5px;
+      margin-top: -5px;
+    }
+  </style>
+</head>
+
+<body>
+  <span class="red-point">hello world</span>
+</body>
+<script>
+  window.onload = function () {
+    var time = "2020-03-24T16:00:00.000Z";
+
+    var d = new Date(time);
+
+    var times = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+    console.log(`${times}`)
+  }
+</script>
+
+</html>

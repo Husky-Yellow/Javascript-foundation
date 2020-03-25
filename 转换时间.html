@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>转换时间</title>
+    <script>
+        window.onload = function () {
+          var time = "2020-03-24T16:00:00.000Z";
+      
+          var d = new Date(time);
+      
+          var times = d.getFullYear() + '-' + (d.getMonth() + 1) + '-' + d.getDate() + ' ' + d.getHours() + ':' + d.getMinutes() + ':' + d.getSeconds();
+          console.log(`${times}`)
+        }
+      </script>
+</head>
+<body>
+    将2020-03-24T16:00:00.000Z 转换成时间
+</body>
+</html>

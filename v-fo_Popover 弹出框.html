@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://cdn.staticfile.org/vue/2.6.11/vue.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- 引入样式 -->
+    <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+    <!-- 引入组件库 -->
+    <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div v-for="(item,index) in visible" :key="index">
+            <!-- visible 控制小弹窗 -->
+            <!-- a 控制按钮 -->
+            <el-popover
+            v-show="item.visible==true"
+            placement="top"
+            width="160"
+            v-model="item.visible">
+            <p>这是一段内容这是一段内容确定删除吗？</p>
+            <div style="text-align: right; margin: 0">
+              <el-button size="mini" type="text"  @click="a(item)">取消</el-button>
+              <el-button type="primary" size="mini"   @click="a(item)">确定</el-button>
+            </div>
+            <el-button slot="reference" @click = >删除{{index}}</el-button>
+          </el-popover>
+            
+        </div>
+    
+
+    </div>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: function () {
+            return {
+                visible:
+                    [{ a: true,visible: false, },
+                    { a: true,visible: false, },
+                    { a: true,visible: false, },
+                    { a: true,visible: false, },
+                    { a: true,visible: false, },
+                    { a: true,visible: false, },
+                    { a: true,visible: false, },
+                    { a: true,visible: false, }]
+            }
+        },
+        methods: {
+            /**
+            * @param {obj} item 点击visible所属的下表的值
+            **/ 
+            a(item){
+                item.visible = false;
+                item.a =false;
+            }
+        }
+    })
+</script>
+
+</html>

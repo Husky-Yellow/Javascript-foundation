@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js冒泡_选择排序</title>
+    <script>
+        // 冒泡排序
+        function bubbleSort(arr) {
+            for (var i = 0; i < arr.length - 1; i++) {
+                for (var j = 0; j < arr.length - (i + 1); j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        //交换两个数的位置
+                        var tmp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = tmp;
+                    }
+                }
+            }
+        }
+        // 选择排序
+        function bubbleSortAsc(arr) {//升序
+            for (var i = 0; i < arr.length - 1; i++) {
+                for (var j = 0; j < arr.length - (i + 1); j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        //交换两个数的位置
+                        var tmp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = tmp;
+                    }
+                }
+            }
+        }
+        function bubbleSortDesc(arr) {//升序
+            for (var i = 0; i < arr.length - 1; i++) {
+                for (var j = 0; j < arr.length - (i + 1); j++) {
+                    if (arr[j] < arr[j + 1]) {
+                        //交换两个数的位置
+                        var tmp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = tmp;
+                    }
+                }
+            }
+        }
+        function changeSortASC(arr) {//升序
+            for (var i = 0; i < arr.length - 1; i++) {
+                //被比较的数的下标
+                for (var j = i + 1; j < arr.length; j++) {
+                    if (arr[i] > arr[j]) {
+                        var tmp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = tmp;
+                    }
+                }
+            }
+        }
+        function changeSortDesc(arr) {//降序
+            for (var i = 0; i < arr.length - 1; i++) {
+                //被比较的数的下标
+                for (var j = i + 1; j < arr.length; j++) {
+                    if (arr[i] < arr[j]) {
+                        var tmp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = tmp;
+                    }
+                }
+            }
+        }
+        var arr = [7, 9, 6, 5, 3, 1];
+        document.write(arr + "<br/>");
+        bubbleSort(arr);
+        document.write(arr)
+
+        var arr = [7, 9, 6, 5, 3, 1];
+        document.write(arr + "<br/>");
+        bubbleSortAsc(arr);
+        document.write(arr + "<br/>");
+        bubbleSortDesc(arr);
+        document.write(arr + "<br/>");
+        changeSortASC(arr);
+        document.write(arr + "<br/>");
+        changeSortDesc(arr);
+        document.write(arr + "<br/>");
+    </script>
+</head>
+
+<body>
+
+
+
+</body>
+
+</html>

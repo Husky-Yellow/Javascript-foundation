@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css反射</title>
+    <style>
+        .reflect-bottom-p {
+            padding-bottom: 300px;
+        }
+
+        .reflect-bottom {
+            -webkit-box-reflect: below;
+        }
+
+        /* 右倒影（有偏移） */
+        .reflect-right-translate {
+            -webkit-box-reflect: right 10px;
+        }
+
+        /* 下倒影+渐变 */
+        reflect-bottom-mask {
+            -webkit-box-reflect: below 0 linear-gradient(transparent, white);
+        }
+    </style>
+</head>
+
+<body>
+    <p>下倒影</p>
+    <p class="reflect-bottom-p"><img
+            src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1585204340&di=356533029668a30e41505bfa6939b074&src=http://pic1.win4000.com/pic/c/bb/a7b76e6ff6.jpg"
+            class="reflect-bottom"></p>
+    <!--   /* 右倒影（有偏移） */ -->
+    <p><img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1585204340&di=356533029668a30e41505bfa6939b074&src=http://pic1.win4000.com/pic/c/bb/a7b76e6ff6.jpg"
+            class="reflect-right-translate"></p>
+    <!--  /* 下倒影+渐变 */ -->
+    <p><img src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1585204340&di=356533029668a30e41505bfa6939b074&src=http://pic1.win4000.com/pic/c/bb/a7b76e6ff6.jpg"
+            class="reflect-bottom-mask"></p>
+</body>
+
+</html>

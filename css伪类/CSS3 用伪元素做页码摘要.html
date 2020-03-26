@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>伪类应用</title>
+    <style>
+        ul {
+            width: 60%;
+            margin: auto;
+            padding: 0;
+            list-style: none;
+        }
+
+        li {
+            margin: .5em 0;
+        }
+
+        a {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-flex-flow: row nowrap;
+            -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+            -webkit-box-align: baseline;
+            -webkit-align-items: baseline;
+            -ms-flex-align: baseline;
+            align-items: baseline;
+            text-decoration: none;
+            -webkit-transition: color .2s ease-in-out;
+            transition: color .2s ease-in-out;
+        }
+
+        a::before {
+            height: .1em;
+            -webkit-box-flex: 1;
+            -webkit-flex: 1 1 auto;
+            -ms-flex: 1 1 auto;
+            flex: 1 1 auto;
+            -webkit-box-ordinal-group: 2;
+            -webkit-order: 1;
+            -ms-flex-order: 1;
+            order: 1;
+            background: left bottom/contain repeat-x url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3IDIiPjxjaXJjbGUgZmlsbD0iI2ZmZiIgY3g9IjMuNSIgY3k9IjEiIHI9IjEiLz48L3N2Zz4=);
+            content: '';
+        }
+
+        a::after {
+            -webkit-box-ordinal-group: 3;
+            -webkit-order: 2;
+            -ms-flex-order: 2;
+            order: 2;
+            content: "p."attr(data-page);
+        }
+
+        a:hover,
+        a:focus {
+            color: black;
+        }
+
+        /* misc */
+
+        html,
+        body {
+            height: 100%;
+        }
+
+        body {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: -ms-flexbox;
+            display: flex;
+            background: #3498db;
+            color: white;
+            font: 1.5em/1.4 "lato";
+            font-weight: 300;
+        }
+
+        a {
+            color: inherit;
+        }
+    </style>
+    <script src="http://wow.techbrood.com/libs/jquery/jquery-1.11.1.min.js"></script>
+</head>
+
+<body>
+    <ul>
+        <li><a href="https://github.com/Husky-Yellow/Learning-PHP-for-LZX" target="_blank"
+                data-page="1">Learning-PHP-for-LZX</a>
+        </li>
+        <li><a href="https://github.com/Husky-Yellow/Javascript-foundation" target="_blank" data-page="2">
+                Javascript-foundation</a>
+        </li>
+        <li><a href="https://github.com/Husky-Yellow/zhinengshe---VueJS-" target="_blank"
+                data-page="3">zhinengshe---VueJS-</a>
+        </li>
+        <li><a href="https://github.com/Husky-Yellow/javascript-lessons" target="_blank"
+                data-page="4">javascript-lessons</a>
+        </li>
+        <li><a href="https://github.com/Husky-Yellow/node.js" target="_blank" data-page="5">node.js</a>
+        </li>
+    </ul>
+</body>
+
+</html>

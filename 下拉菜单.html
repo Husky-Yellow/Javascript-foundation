@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>	
+			*{
+				margin: 0;
+				padding: 0;
+			}	
+			body{
+				background-color: #5889A7;
+			}
+			/* 容器 <div> - 需要定位下拉内容 */			
+			.box {
+				position: relative;
+			}
+			
+			/* 下拉按钮样式 */			
+			.box .down {
+				width: 200px;
+				height: 50px;
+				position: absolute;
+				top: 20px;
+				left: 904px;
+				border: none;
+				background-color: #4CAF50;
+				color: white;
+				font-size: 16px;
+				cursor: pointer;
+			}
+			
+			/* 下拉内容 (默认隐藏) */			
+			.box-content {				
+				position: absolute;
+				left: 904px;
+				top: 70px;
+				background-color: #EDEEF0;
+				display: none;
+			}
+			
+			/* 下拉菜单的链接 */			
+			.box-content a {
+				width: 200px;
+				height: 100px;
+				color: black;
+				text-align: center;
+				line-height: 100px;
+				text-decoration: none;
+				display: block;
+			}
+			
+			/* 鼠标移上去后修改下拉菜单链接颜色 */			
+			.box-content a:hover {
+				background-color: #E8D8CB;
+			}
+			
+			/* 在鼠标移上去后显示下拉菜单 */			
+			.box:hover .box-content {
+				display: block;
+			}
+			
+			/* 当下拉内容显示后修改下拉按钮的背景颜色 */			
+			.box:hover .down {
+				background-color: #3e8e41;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<button class="down">下拉菜单</button>
+			<div class="box-content">
+				<a href="#">菜单内容1</a>
+				<a href="#">菜单内容 2</a>
+				<a href="#">菜单内容 3</a>
+			</div>
+		</div>
+	</body>
+
+</html>

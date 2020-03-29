@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			body{
+				background-image: url(img/bgi.jpg);			
+			}	
+			.container{
+				width: 80%;
+				height: 300px;
+				margin: 100px auto;
+				text-align: center;
+			}	
+			.container div img {
+				width: 200px;
+				height: 300px;
+				transition: transform 0.3s linear;				
+			}			
+			.container .img1:hover {
+				transform: scale(1,1.5)
+			}
+			.container .img2:hover {
+				transform: scale(0.5)
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div>
+				<img class="img1" src="img/1.png" />
+				<img class="img1" src="img/2.png" />
+				<img class="img1" src="img/3.png" />
+				<img class="img1" src="img/4.png" />
+			</div>
+			<div>
+				<img class="img2" src="img/5.png" />
+				<img class="img2" src="img/6.png" />
+				<img class="img2" src="img/7.png" />
+				<img class="img2" src="img/8.png" />
+			</div>
+		</div>
+	</body>
+
+</html>

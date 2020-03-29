@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<title></title>
+		<style>
+			body{
+				background-image: url(img/bgi.jpg);
+			}		
+			#underline {
+				width: 400px;
+				height: 200px;
+				background: orange;
+				margin: 20px auto;
+				position: relative;
+			}
+			
+			#underline:after {
+				content: "";
+				width: 0;
+				height: 5px;
+				background: red;
+				position: absolute;
+				top: 100%;
+				left: 50%;
+				transition: all .8s;
+			}
+			
+			#underline:hover:after {
+				left: 0%;
+				width: 100%;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="underline"></div>
+	</body>
+
+</html>

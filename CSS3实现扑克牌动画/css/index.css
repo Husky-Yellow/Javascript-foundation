@@ -1,0 +1,46 @@
+.* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	background: url(../img/bgi.jpg) no-repeat;
+}
+
+.box {
+	width: 300px;
+	height: 440px;
+	margin-left: 600px;
+	margin-top: 100px;
+	position: relative;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+	transition: all 1s;
+	position: absolute;
+	left: 0;
+	top: 0;
+	transform-origin: center bottom;
+}
+
+.box:hover img:nth-child(5) {
+	transform: rotate(-10deg);
+}
+
+.box:hover img:nth-child(4) {
+	transform: rotate(-30deg);
+}
+
+.box:hover img:nth-child(3) {
+	transform: rotate(-50deg);
+}
+
+.box:hover img:nth-child(2) {
+	transform: rotate(-70deg);
+}
+
+.box:hover img:nth-child(1) {
+	transform: rotate(-90deg);
+}

@@ -1,0 +1,89 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {	
+	background: url(../img/bgi.jpg)  no-repeat;
+}
+
+ul,
+li,
+ol {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+#content {
+	width: 1200px;
+	margin-top: 50px;
+	margin-left: 100px;
+}
+
+#content ul {
+	position: relative;
+}
+
+#content .bar li {
+	width: 250px;
+	height: 400px;
+	float: left;
+	margin-right: 30px;
+}
+#content .bar .last-li{
+	margin-right: 0;
+}
+#content ul li  {
+	width: 250px;
+	height: 400px;
+	display: block;
+	position: relative;
+	/*远近度*/
+	perspective: 400px;
+	transition: all 1s;
+}
+
+#content ul li >div {
+	transition: all 1s;
+	/*背面不可视*/
+	backface-visibility: hidden;
+}
+
+#content ul li:hover .forward {
+	transform: rotateY(-180deg);
+}
+img {
+	width: 250px;
+	height: 400px;
+	display: block;
+	border-radius: 5px;
+}
+
+.tips {
+	width: 250px;
+	height: 400px;
+	color: #fff;
+	background: linear-gradient(#333, #666);
+	transform: rotateY(180deg);
+	transition: all 1s;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+.tips p {
+	text-indent: 2em;
+	line-height: 1.5em;
+	padding: 20px;
+	font-size: 18px;
+	font-weight: 400px;
+}
+
+#content ul li:hover .tips {
+	transform: none;
+	box-shadow: 0 0 10px 5px pink;
+	border-radius: 10px;
+}

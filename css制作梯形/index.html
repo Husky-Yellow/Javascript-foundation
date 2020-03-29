@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				background-image: url(img/bgi.jpg);
+			}
+			/*第一种梯形*/			
+			.trapezoid1 {
+				position: relative;
+				display: inline-block;
+				padding: 100px;
+				font-size: 24px;
+				color: white;
+				margin-left: 150px;
+			}
+			
+			.trapezoid1::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				z-index: -1;
+				background: #58a;
+				transform: perspective(2.5em) rotateX(5deg);
+			}
+			
+			/*第二种梯形*/
+			.trapezoid2 {
+				position: relative;
+				display: inline-block;
+				padding: 100px;
+				font-size: 24px;
+				color: white;
+				margin-left: 440px;
+			}
+			
+			.trapezoid2::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				z-index: -1;
+				background: #58a;
+				transform: perspective(1.5em) rotateX(5deg);
+				transform-origin: bottom left;
+			}
+			
+			/*第三种梯形*/			
+			.trapezoid3 {
+				position: relative;
+				display: inline-block;
+				padding: 100px;
+				font-size: 24px;
+				color: white;
+				margin-left: 350px;			
+			}
+			
+			.trapezoid3::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				right: 0;
+				bottom: 0;
+				z-index: -1;
+				background: #58a;
+				transform: perspective(1.5em) rotateX(5deg);
+				transform-origin: bottom right;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="trapezoid1">梯形</div>
+		<div class="trapezoid2">梯形</div>
+		<div class="trapezoid3">梯形</div>
+	</body>
+
+</html>

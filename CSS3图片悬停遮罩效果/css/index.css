@@ -1,0 +1,56 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: "Microsoft yahei", Arial;
+	background: url(../img/bgi.jpg) no-repeat;
+}
+
+ul li {
+	float: left;
+	width: 400px;
+	height: 600px;
+	background: #979797;
+	margin-top: 50px;
+	margin-left: 100px;
+	list-style: none;
+	position: relative;
+	overflow: hidden;
+}
+ul li img{
+	width: 400px;
+	height: 600px;
+}
+ul li .cover {
+	width: 400px;
+	height: 600px;
+	background: rgba(255, 39, 42, 0.7);
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: #ffffff;
+	transform-origin: right bottom;	
+	transform: rotate(90deg);	
+	transition: all 0.35s;	
+}
+ul li .cover h3 {
+	width: 80px;
+	height: 80px;
+	text-align: center;
+	line-height: 80px;
+	background: #ffffff;
+	color: red;
+	border-radius: 50%;
+	margin: 60px auto;	
+}
+ul li .cover p {
+	padding: 0 50px;
+	font-size: 14px;
+	text-indent: 28px;
+	line-height: 38px;
+}
+
+ul li:hover .cover {
+	transform: rotate(0deg);
+}

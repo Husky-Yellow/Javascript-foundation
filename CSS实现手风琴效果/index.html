@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				position: relative;
+				background-color: #E3ECF5;
+			}
+			.box {
+				position: absolute;
+				left: 30%;
+				top: 200px;
+				width: 1100px;
+				height: 600px;
+			}			
+			.box li {
+				float: left;
+				list-style: none;
+				width: 200px;
+				height：500px;
+				transition: all 2s;
+				position: relative;
+				overflow: hidden;
+			}			
+			.box li img {
+				height: 500px;
+			}			
+			.box ul:hover li {
+				width: 80px;
+			}			
+			.box ul li:hover {
+				width: 700px;
+			}			
+			.box li .title {
+				position: absolute;
+				width: 100%;
+				height: 50px;
+				text-align: center;
+				line-height: 50px;
+				bottom: 0;
+				left: 0;
+				color: white;
+			}			
+		</style>
+	</head>
+
+	<body>
+		<div class="box">
+			<ul>
+				<li>
+					<img src="img/xihu.jpg" />
+					<div class="title">杭州.西湖</div>
+				</li>
+				<li>
+					<img src="img/gugong.jpg" />
+					<div class="title">北京.故宫</div>
+				</li>
+				<li>
+					<img src="img/dfmingzhu.jpg" />
+					<div class="title">上海.东方明珠</div>
+				</li>
+			</ul>
+		</div>
+
+	</body>
+
+</html>

@@ -1,0 +1,97 @@
+<html>
+
+	<head>
+		<meta charset="UTF-8" />
+		<title></title>
+	</head>
+	<style>
+		body{
+			background-image: url(img/bgi.jpg);
+			position: relative;
+		}
+		div{
+			width: 1000px;
+			height: 800px;
+			position: absolute;
+			top: 10px;
+			right: 30px;
+		}
+		img{
+			width: 300px;
+			height: 200px;
+			margin-bottom: 20px;
+			margin-right: 20px;
+		}
+      	.pic1{
+      		filter: blur(5px);/*给图像设置高斯模糊，值越大越模糊*/
+      		top: 50px;
+      		left: 800px;
+      	}
+      	.pic2{
+      		/*给图片应用一种线性乘法，使其看起来更亮或更暗。
+      		 * 如果值是0%，图像会全黑。值是100%，则图像无变化。
+      		 * 值超过100%也是可以的，图像会比原来更亮。
+      		 * 如果没有设定值，默认是1。*/
+      		filter: brightness(0.5);
+      	}
+      	.pic3{
+      		/*调整图片的对比度，0%时图像全黑，100%时图像不变，
+      		 * 超过100%时指运用更低的对比，默认为1*/
+      		filter: contrast(200%);
+      	}
+      	.pic4{
+      		/*给图像设置一个阴影效果，和css中的box-shadow相似，
+      		 * 不同的是，drop-shadow()中不可以指定inset，其余均相同。*/
+      		filter: drop-shadow(16px 16px 10px black)
+      	}
+      	.pic5{
+      		/*设置图像的灰度，100%则为灰度图像，0%则图像无变化，
+      		 * 值只能在0%-100%之间，默认为0。*/
+      		filter: grayscale(100%)
+      	}
+      	.pic6{
+      		/*图像色相旋转，参数为deg，值在0deg-360deg之间，
+      		 * 超过360deg意味着旋转了一周，并无实际意义。*/
+      		filter: hue-rotate(90deg)
+      	}
+      	.pic7{
+      		/*反转图像，值是转换的比例，值在0%-100%之间，
+      		 * 100%则完全反转，0%则无变化，可以实现曝光的效果。*/
+      		filter: invert(100%)
+      	}
+      	.pic8{
+      		/*转化图像的透明程度,
+      		 * 值为0%则是完全透明，值为100%则图像无变化
+      		 * 默认值为1*/
+      		filter: opacity(30%)
+      	}
+      	.pic9{
+      		/*转换图像饱和度,值为0%则是完全不饱和，值为100%则图像无变化。
+      		 * 超过100%的值是允许的，则有更高的饱和度。值默认是1。*/
+      		filter: saturate(200%)
+      	}
+      	.pic10{
+      		/*将图像转换为深褐色,值为100%则完全是深褐色的，值为0%图像无变化。
+      		 * 值在0%到100%之间，值默认是0。*/
+      		filter: sepia(100%)
+      	}
+      	/*注意:这些值可以符合使用*/
+	</style>
+
+	<body>
+		<div>
+			<img src="img/1.jpg" class="pic"/>
+			<img src="img/1.jpg" class="pic1"/>
+			<img src="img/1.jpg" class="pic2"/>
+			<img src="img/1.jpg" class="pic3"/>
+			<img src="img/1.jpg" class="pic4"/>
+			<img src="img/1.jpg" class="pic5"/>
+			<img src="img/1.jpg" class="pic6"/>
+			<img src="img/1.jpg" class="pic7"/>
+			<img src="img/1.jpg" class="pic8"/>
+			<img src="img/1.jpg" class="pic9"/>
+			<img src="img/1.jpg" class="pic10"/>
+			<img src="img/1.jpg" class="pic"/>
+		</div>
+	</body>
+</html>

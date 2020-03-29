@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				background-color: #FFFAE8;
+			}
+			.box{
+				width: 90%;
+				height: 600px;
+				margin: 150px auto;
+				text-align: center;
+			}
+			.box img{
+				width: 400px;
+				height: 600px;
+				margin-right: 100px;
+				transition: all 1s linear;
+			}
+			.box .change3{
+				margin-right: 0;
+			}
+			.box .change1:hover{
+				transform: skew(45deg, 20deg);
+			}
+			.box .change2:hover{
+				transform: skew(-45deg, -20deg);
+			}
+			.box .change3:hover{
+				transform: skew(45deg, 45deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<img class="change1" src="img/1.jpg" alt="" />
+			<img class="change2" src="img/2.jpg" alt="" />
+			<img class="change3" src="img/3.jpg" alt="" />
+		</div>
+	</body>
+</html>

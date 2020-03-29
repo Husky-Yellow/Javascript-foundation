@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>图片旋转特效</title>
+		<style type="text/css">
+			body{
+				background-image: url(img/bgi.jpg);
+				position: relative;
+			}
+			#div {
+				width: 580px;
+				height: 580px;
+				position: absolute;
+				top: 30px;
+				right: 230px;
+				background: url(img/jay.jpg) no-repeat;
+				/*背景图片*/
+				background-size: 580px 580px;
+				border-radius: 50%;
+				/*圆角*/
+				animation: run 5s linear 2s infinite;
+				/* 动画名称 一次的时间 速度曲线 什么时候开始 循环次数 */
+			}
+			
+			#div:hover {
+				animation-play-state: paused;
+			}
+			/* 鼠标移动上去 暂停动画*/
+			
+			@keyframes run {
+				from {
+					transform: rotate(0deg);
+				}
+				to {
+					transform: rotate(360deg);
+				}
+			}
+			/* 360-0 向左旋转 0-360 向右旋转 */
+		</style>
+	</head>
+
+	<body>
+		<div id="div"></div>
+	</body>
+
+</html>

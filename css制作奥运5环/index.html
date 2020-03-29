@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				height: 0;
+			}
+			body{
+				background: url(img/bgi.jpg) no-repeat;
+			}
+			.box{
+				width: 780px;
+				height: 370px;
+				position: absolute;
+				left: 30%;
+				top: 30%;
+				margin-left: -390px;
+				margin-top: -185px;
+			}
+			.box .circle{
+				width: 200px;
+				height: 200px;
+				border-radius: 50%;
+				position: absolute;
+			}
+			.box .blue{
+				border: 5px solid blue;
+			}
+			.box .blue2 {
+				border: 5px solid transparent;
+				border-right-color: blue;
+				z-index: 2;
+			}
+			
+			.box .black {
+				border: 5px solid black;
+				left: 270px;
+			}
+			.box .black2{
+				border: 5px solid transparent;
+				border-bottom-color: black;
+				border-right-color: black;
+				left: 270px;
+				z-index: 2;				
+			}
+			.box .red {
+				border: 5px solid red;
+				left: 540px;
+			}
+			
+			.box .red2 {
+				border: 5px solid transparent;
+				border-left-color: red;
+				left: 540px;
+				z-index: 2;
+			}
+			.box .yellow {
+				border: 5px solid yellow;
+				left: 140px;
+				top: 130px;
+			}
+			.box .green {
+				border: 5px solid green;
+				left: 410px;
+				top: 130px;
+			}
+			
+			.box .green2 {
+				border: 5px solid transparent;
+				border-left-color: green;
+				left: 410px;
+				top: 130px;
+				z-index: 2;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<div class="circle blue"></div>
+			<div class="circle blue2"></div>
+			<div class="circle black"></div>
+			<div class="circle black2"></div>
+			<div class="circle red"></div>
+			<div class="circle red2"></div>
+			<div class="circle yellow"></div>
+			<div class="circle green"></div>
+			<div class="circle green2"></div>
+		</div>
+	</body>
+</html>

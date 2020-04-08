@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>5.11动画停止和延时</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+        body {
+            font-size: 13px;
+        }
+
+        .divFrame {
+            border: solid 1px #666;
+            width: 233px;
+            text-align: center;
+        }
+
+        .divFrame .divTitle {
+            background-color: #eee;
+            padding: 5px 0px 5px 0px;
+        }
+
+        .divFrame .divContent {
+            padding: 5px 0px 5px 0px;
+        }
+
+        .divFrame .divContent img {
+            border: solid 1px #eee;
+            padding: 2px;
+        }
+    </style>
+    <script>
+        $(function () {
+            //点击"开始"链接事件
+            $("a:eq(0)").click(function () {
+                // "拉窗帘"方式切换图片 
+                $("img").slideToggle(3000);
+            })
+            //点击"停止"链接事件
+            $("a:eq(1)").click(function () {
+                // 停止正在执行的动画
+                $("img").stop();
+            })
+            //点击"延时"链接事件
+            $("a:eq(2)").click(function () {
+                // 延时切换图片
+                $("img")
+                    .delay(2000)
+                    .slideToggle(3000);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="divFrame">
+        <div class="divTitle">
+            <a href="javascript:void(0)">开始</a>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="javascript:void(0)">停止</a>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <a href="javascript:void(0)">延时</a>
+        </div>
+        <div class="divContent">
+            <img src="img04.jpg" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>5.3toggle()方法</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+        body {
+            font-size: 13px;
+        }
+
+        .divFrame {
+            width: 180px;
+        }
+
+        .divFrame .divMenu {
+            float: left;
+        }
+
+        .divFrame .divContent {
+            float: right;
+        }
+
+        .divFrame .divContent img {
+            display: none;
+        }
+
+        .btn {
+            border: #666 1px solid;
+            padding: 2px;
+            width: 80px;
+            margin-bottom: 5px;
+            filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0, StartColorStr=#ffffff, EndColorStr=#ECE9D8);
+        }
+    </style>
+    <script>
+        $(function () {
+            $("input:eq(0)").click(function () {
+                //   无参数方法
+                $("img").toggle();
+            })
+            $("input:eq(1)").click(function () {
+                //    根据参数switch显示
+                var intI = 0;
+                // 获取逻辑值
+                var blnA = intI > 1;
+                $("img").toggle(blnA);
+            })
+            $("input:eq(2)").click(function () { 
+                // 动画方式显示
+                $("img").toggle(3000,function () {
+                    $(this)
+                    .css({
+                        "border":"solid 1px #ccc",
+                        "padding":"2px"
+                    });
+                  })
+             })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="divFrame">
+        <div class="divMenu">
+            <input type="button" value="无参数" id="Button1" class="btn"><br>
+            <input type="button" value="逻辑显示" id="Button2" class="btn"><br>
+            <input type="button" value="动画显示" id="Button3" class="btn"><br>
+        </div>
+        <div class="divContent">
+            <img src="img04.jpg" alt="">
+        </div>
+    </div>
+</body>
+
+</html>

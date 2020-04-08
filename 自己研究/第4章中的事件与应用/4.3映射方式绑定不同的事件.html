@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>4.3映射方式绑定不同的事件</title>	
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+    <script src="../jquery-3.2.1.min.js"></script>
+    <style>
+      body{font-size: 13px;}
+      .clsTip{border: #ccc 1px solid;background-color: #eee;margin-top: 15px;padding: 5px;width: 185px;display: none;}
+      .txt{border:#666 1px solid;padding: 3px;}
+      .clsTipa{border: #ccc 1px solid;background-color: #eee;margin-top: 15px;padding: 5px;width: 185px;display: none;}
+      .txta{border:#666 1px solid;padding: 3px;}
+    </style>
+    <script>
+        $(function(){
+            $(".txt").bind({focus: function(){
+                $("#divTip")
+                //显示
+                .show()
+                //设置文本
+                .html("执行的是focus事件");
+                },
+                change:function(){
+                    $("#divTip")
+                    //显示
+                    .show()
+                    //设置文本
+                    .html("执行的是change事件");
+                }
+            });
+
+            var message = "执行的是foxus事件";
+            $(".txta").bind("focus",{msg:message},function(event){
+                $(".clsTipa")
+                //显示
+                .show()
+                //设置文本
+                .html(event.data.msg);
+            });
+            message = "执行的是change事件";
+            $('.txta').bind('change',{msg:message},function(event){
+                $(".clsTipa")
+                //显示
+                .show()
+                //设置文本
+                .html(event.data.msg);
+            });
+        })
+
+    </script>
+</head>
+<body>
+   <div>
+        姓名: 
+        <input type="text" class="txt">
+    </div>
+    <div id="divTip" class="clsTip"></div>
+    <div>
+        姓名: 
+        <input type="text" class="txta">
+    </div>
+    <div  class="clsTipa"></div>
+</body>
+</html>

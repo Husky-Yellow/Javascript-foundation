@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2.5使用jQuery基本选择器选择元素</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+        body{
+            font-size: 12px;
+            text-align: center;
+        }
+        .clsFrame{
+            width: 300px;
+            height: 100px;
+        }
+        .clsFrame div.span{
+            display: none;
+            float: left;
+            width: 65px;
+            height: 65px;
+            border: solid 1px #ccc;
+            margin:8px;
+        }
+        .clsOne{
+            background-color: #eee;
+        }
+    </style>
+    <script>
+        $(function(){  //ID匹配元素
+            $("#divOne").css("display","block");
+        })
+        $(function(){  //元素名匹配元素
+            $("div span").css("display","block");
+        })
+        $(function(){  //类匹配元素
+            $(".clsFrame .clsOne").css("display","block");
+        })
+        $(function(){  //匹配所有元素
+            $("*").css("display","block");
+        })
+        $(function(){  //合并匹配元素
+            $("#divOne,span").css("display","block");
+        })
+    </script>
+</head>
+<body>
+    <div class="classFrame">
+            <div id="divone">ID</div>
+            <div class="classone">CLASS</div>
+            <span>SPAN</span>
+    </div>
+</body>
+</html>

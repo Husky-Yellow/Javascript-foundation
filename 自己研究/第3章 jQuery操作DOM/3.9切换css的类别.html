@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>3.9切换css的类别</title>	
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+      body{font-size: 15px;}
+      .cls1{border: solid 1px #666; padding: 3px;}
+    </style>
+    <script type="text/javascript">
+      $(function(){
+          $(function(){
+              $("p").click(function(){
+                  //切换样式类别
+                  $(this).toggleClass("cls1");
+              })
+          })
+      })
+    </script>
+</head>
+<body>
+   <p>Write Less Do More</p>
+</body>
+</html>

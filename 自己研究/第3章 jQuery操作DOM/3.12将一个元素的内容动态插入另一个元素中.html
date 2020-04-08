@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>3.12动态插入元素节点</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+    <style>
+        body{font-size: 13px;}
+        img{border: solid 1px #ccc;padding: 3px;margin: 5px;}
+    </style>
+    <script>
+        $(function () {
+            //插入内容
+            $("img").appendTo($("span"));
+        })
+    </script>
+
+<body>
+    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557831133446&di=9dde872ce4bc7f7de283e13f5829acbe&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01c66a554292bc0000019ae90a02ce.jpg%402o.jpg" alt="" title="2008新书封皮">
+    <span>
+        <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557831133446&di=9dde872ce4bc7f7de283e13f5829acbe&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01c66a554292bc0000019ae90a02ce.jpg%402o.jpg" alt="" title="2010年新书封皮">
+    </span>
+</body>
+
+</html>
+<!-- 在一个页面中,创建1个img和2个span标记,通过appentTo()方法将img标记插入span标记中 -->

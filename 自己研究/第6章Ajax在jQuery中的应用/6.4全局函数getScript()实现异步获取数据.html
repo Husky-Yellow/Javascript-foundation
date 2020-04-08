@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>6.4全局函数getScript()实现异步获取数据</title>	
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="jquery-3.2.1.min.js"></script>
+    <style>
+        body{font-size:13px}
+           .divFrame{width:260px;border:solid 1px #666}
+           .divFrame .divTitle{padding:5px;background-color:#eee}
+           .divFrame .divContent{padding:8px}
+           .divFrame .divContent .clsShow{font-size:14px}
+           .btn {border:#666 1px solid;padding:2px;width:80px;
+           filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#ffffff, EndColorStr=#ECE9D8);}
+ </style>
+    <script>
+        $(function () { 
+            // 按钮点击事件
+            $("#Button1").click(function(){
+                // 打开以获取返回数据的文件
+                $.getScript("2.js")
+            })
+         })
+    </script>
+</head>
+<body>
+    <div class="divFrame">
+         <div class="divTitle">
+              <input id="Button1" type="button"
+                     class="btn" value="获取数据" />
+         </div>
+         <div class="divContent">
+              <div id="divTip"></div>
+         </div>
+    </div>
+</body>
+</html>

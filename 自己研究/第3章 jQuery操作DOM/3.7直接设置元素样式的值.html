@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>3.7直接设置元素样式的值</title>	
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+      body{font-size: 15px;}
+      p{padding: 5px;width: 220px;}
+    </style>
+    <script type="text/javascript">
+      $(function(){
+          $(function(){
+              $("p").click(function(){
+                  //字体加粗
+                  $(this).css("font-weight","bold");
+                  //斜体
+                  $(this).css("font-style","italic");
+                  //增加背景色
+                  $(this).css("background-color","#eee");
+              })
+          })
+      })
+    </script>
+</head>
+<body>
+   <p>Write Less Do More</p>
+</body>
+</html>

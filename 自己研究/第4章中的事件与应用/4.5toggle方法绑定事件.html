@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>4.5toggle方法绑定事件-切换事件</title>	
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+      body{font-size: 13px;}
+      img{border: solid 1px #ccc;padding: 3px;}
+    </style>
+    <script>
+        $(function(){
+            $("img").toggle(function(){
+                $("img").attr("src","../img/timg.jpg");
+                $("img").attr("title","this.src");
+
+            },function(){
+                $("img").attr("src","../img/timg1.jpg");
+                $("img").attr("title","this.src");
+            })
+        })
+    </script>
+</head>
+<body>
+    <img>
+</body>
+</html>

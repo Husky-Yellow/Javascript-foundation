@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>5.1show()和hide()方法</title>	
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+      body{font-size: 13px;}
+      .artFram{
+          border: solid 1px #ccc;
+          background-color: #eee;
+          width: 260px;
+          padding: 8px;
+          word-break: break-all;
+      }
+      .artList{
+          line-height: 1.8em;
+      }
+    </style>
+    <script>
+        $(function(){
+            // 获取单击文本
+            var $link = $(".artList a");
+            // 获取隐藏的段落
+            var $hide = $(".artList :eq(2)");
+            // 文本单击事件
+            $link.click(function () {
+                // 如果未显示
+                if($(this).html() == "显示"){
+                    // 改变文本内容
+                    $(this).html("隐藏");
+                    // 显示隐藏的文本
+                    $hide.show();
+                }else{
+                    $(this).html("显示");
+                    $hide.hide();
+                }
+              })
+        })
+    </script>
+</head>
+<body>
+    <div class="artFram">
+        <div class="artList">
+            <span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+            <span>你会啥啊</span>
+            <span style="display: none">不知道啊</span>
+            &nbsp;
+            <a href="javascript:void(0)">显示</a>
+        </div>
+    </div>
+</body>
+</html>

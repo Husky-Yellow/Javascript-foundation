@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>5.8简单的动画</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+        .divFrame {
+            border: solid 1px #ccc;
+            background-color: #eee;
+            width: 60px;
+            height: 60px;
+            font-size: 13px;
+            padding: 5px;
+        }
+    </style>
+    <script>
+        $(function () {
+            // div元素点击事件
+            $(".divFrame").click(function () {
+                // 宽与高变化的动画效果
+                $(this).animate({
+                        width: "20%",
+                        hright: "70px"
+                    },
+                    3000,
+                    function () {
+                        // 动画完成后执行的回调函数
+                        $(this).css({
+                                "border": "solid 3px #666"
+                            })
+                            .html("变大了!");
+                    }
+                )
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="divFrame">
+        点击放大
+    </div>
+</body>
+
+</html>

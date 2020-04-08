@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>3.9切换css的类别</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+        body {font-size: 13px;}
+        ul{padding: 0px;list-style: none;}
+        ul li{line-height: 2.0em;}
+        .divL{float: left;width: 200px;background-color: #eee;border: solid 1px #666;margin: 5px;padding: 0px 8px 0px 8px;}
+        .divR{float: left;width: 200px;display: none;border: solid 1px #ccc;margin: 5px;padding: 0 8px 8px 8px;}
+        .txt{border:#666 1px solid;padding: 3px;width: 120px;}
+        .btn{border:#666 1px solid;padding: 2px;width: 60px;filter: progid:DxImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#ffffff,EndColorStr=#ECE9D8);}
+    </style>
+    <script type="text/javascript">
+        $(function () {
+            $("#Button1").click(function(){
+                //获取元素名
+                var $str1 = $("#select1").val();
+                //获取内容
+                var $str2 = $("#text1").val();
+                //获取属性名
+                var $str3 = $("#select2").val();
+                //获取属性值
+                var $str4 = $("#text2").val();
+                //创建DOM对象
+                var $div=$( "<" + $str1 + " " + $str3 + "='" + $str4 + "'>" + $str2 + "</" + $str1 + ">");
+                //插入节点中
+                $(".divR").show().append($div);
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div class="divL">
+        <p></p>
+        <ul>
+            <li>元素名:
+                <select id="select1">
+                    <option value="p">p</option>
+                    <option value="div">div</option>
+                </select>
+            </li>
+            <li>内容为:
+                <input type="text" class="txt" id="text1">
+            </li>
+            <li>属性名:
+                <select id="select2">
+                    <option value="title">title</option>
+                </select>
+            </li>
+            <li>属性值:
+                <input type="text" id="text2" class="txt">
+            </li>
+            <li style="text-align: center;padding-top: 5px">
+                <input type="button" class="btn" id="Button1" value="创建"></li>
+        </ul>
+    </div>
+    <div class="divR"></div>
+</body>
+
+</html>
+
+<!-- append()方法:内部插入节点 -->

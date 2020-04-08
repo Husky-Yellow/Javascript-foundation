@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>4.2bind方法绑定事件</title>	
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+      .btn{
+        border: #666 1px solid;
+        padding: 2px;
+        width: 50px;
+        filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#ffffff,EndColorStr=#ECE9D8);
+      }
+    </style>
+    <script>
+        $(function(){
+            $("#btnBind").bind("click",function(){
+                //按钮不可用
+                $(this).attr("disabled","disabled");
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="button" value="Button" id="btnBind" class="btn">
+</body>
+</html>

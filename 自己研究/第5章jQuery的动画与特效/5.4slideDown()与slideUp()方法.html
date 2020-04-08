@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>5.4slideDown()与slideUp()方法</title>	
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+      body{font-size: 13px;}
+      .divFrame{
+          width: 108px;
+          border: solid 1px #666;
+      }
+      .divFrame .divTitle{
+          padding: 5px;
+          background-color: #eee;
+      }
+      .divFrame .divContent{
+          padding: 8px;
+      }
+      .divFrame .divContent img{
+          border: solid 1px #ccc;
+          padding: 2px;
+      }
+    </style>
+    <script>
+        $(function(){
+            // 初始化一个布尔变量值
+            var blnShow = false;
+            // 定义变量获取标题部分
+            var $Title = $(".divTitle");
+            // 定义变量获取提示元素
+            var $Tip = $("#divTip")
+
+            // 点击标题部分事件
+            $Title.click(function () { 
+                if(!blnShow){
+                    // 图片高度向上减少,执行完成后,回调一个函数
+                    $("img").slideUp(3000,function () {
+                        $Tip.html("关闭成功!");
+                      })
+                    //   改变标题内容
+                    $(this).html("显示图片");
+                    // 改变布尔变量值
+                    blnShow = true;
+                }else{
+                    // 清空提示内容
+                    $Tip.html("");
+                    // 图片高度向下增大
+                    $("img").slideDown(3000);
+                    $(this).html("隐藏图片");
+                    blnShow = false;
+                }
+             })
+        })
+    </script>
+</head>
+<body>
+    <div class="divFrame">
+        <div class="divTitle">
+            隐藏图片
+        </div>
+        <div class="divContent">
+            <img src="img04.jpg" alt="">
+            <div id="divTip"></div>
+        </div>
+    </div>
+</body>
+</html>

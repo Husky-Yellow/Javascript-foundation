@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>4.8trigger方法绑定事件-其他事件</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- <script src="../jquery-3.2.1.min.js"></script> -->
+    <style>
+       body{font-size: 13px;}
+       .txt{border: #666 1px solid;padding: 3px;}
+    </style>
+    <script>
+        $(function(){
+            //获取文本框
+            var oTxt = $("input");
+            //自动选中文本框
+            oTxt.trigger("select");
+            //编写文本框自定义事件
+            oTxt.bind("btn_Click",function(){
+                //获取自身内容
+                var txt = $(this).val();
+                //显示在页面中
+                $("#divTip").html(txt);
+            })
+            //自动触发自定义事件
+            oTxt.trigger("btn_Click");
+            //如果不希望页面自动执行,可使用triggerHandler()方法
+        })
+    </script>
+</head>
+
+<body>
+    姓名:
+    <input type="text" value="小黄" id="Text1" class="txt">
+    <div id="divTip" style="padding-top: 5px;"></div>
+</body>
+
+</html>

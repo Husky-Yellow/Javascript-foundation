@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>5.2动画效果的show()和hide()方法</title>	
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+      body{font-size: 13px;}
+      img{
+          display: none;
+          cursor: pointer;
+      }
+    </style>
+    <script>
+        $(function(){
+           $("a").click(function () {
+                // 显示链接点击事件
+                $("img").show(3000,function () { 
+                    // 显示完成时执行的函数
+                    $(this).css({"border":"solid 1px #ccc"});
+                 })
+                // 显示图片的点击事件
+                 $("img").click(function () { 
+                    //  动画效果隐藏
+                     $(this).hide(3000);
+                  })
+             })
+        })
+    </script>
+</head>
+<body>
+    <a href="javascript:void(0)">显示</a>
+    <img src="img04.jpg" alt="" srcset="">
+</body>
+</html>

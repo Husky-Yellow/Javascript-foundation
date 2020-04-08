@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>5.7fadeTo()方法</title>	
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+      .divFrame{
+          border: solid 1px #666;
+          width: 197px;
+          text-align: center;
+      }
+      .divFrame .divTitle{
+          background-color: #eee;
+          padding: 5px 0px 5px 0px;
+      }
+      .divFrame .divContent{
+          padding: 5px 0px 5px 0px;
+      }
+      .divFrame .divContent img{
+          border: solid 1px #eee;
+          padding: 2px;
+      }
+    </style>
+    <script>
+        $(function(){
+            // 获取图片元素对象
+           var $img=$("img");
+            // 获取下拉列表对象
+            var $sel = $("select");
+            // 下拉列表框选项改变事件
+            $sel.change(function () { 
+                // 获取选中的值
+                var fltValue = $sel.val();
+                // 改变图片的透明度
+                $img.fadeTo(3000,fltValue);
+             })
+        })
+    </script>
+</head>
+<body>
+    <div class="divFrame">
+        <div class="divTitle">
+            <select id="Select1">
+                <option value="0.2">0.2</option>
+                <option value="0.4">0.4</option>
+                <option value="0.6">0.6</option>
+                <option value="0.8">0.8</option>
+                <option value="1.0" selected="selected">1.0</option>
+            </select>
+        </div>
+        <div class="divContent">
+            <img src="img04.jpg" title="风景图片s" alt="">
+        </div>
+    </div>
+</body>
+</html>

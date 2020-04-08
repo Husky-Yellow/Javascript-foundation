@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>4.4hover方法绑定事件-切换事件</title>	
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+      body{font-size: 13px;}
+      .clsFrame{border: solid 1px #666;width: 220px;}
+      .clsFrame .clsTitle{background-color: #eee;padding: 5px;font-weight: bold;}
+      .clsFrame .clsContent{padding: 5px;display: none;}
+    </style>
+    <script>
+        $(function(){
+            $(".clsTitle").hover(function(){
+                $(".clsContent").show();
+            },function(){
+                $(".clsContent").hide();
+            })
+        })
+    </script>
+</head>
+<body>
+    <div class="clsFrame">
+        <div class="clsTitle">啥也不会小黄狗,一事无成张照坤!</div>
+        <div class="clsContent">The cowards never started and the weak died along the way-that leaves us. </div>
+    </div>
+</body>
+</html>

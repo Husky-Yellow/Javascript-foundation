@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>4.6unbind方法移除事件</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- <script src="../jquery-3.2.1.min.js"></script> -->
+    <style>
+        body {
+            font-size: 13px;
+        }
+        .btn{
+            border: solid 1px #666;
+            padding :2px;
+            width: 80px;
+            filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#ffffff,EndColorStr=#ECE9D8);
+        }
+        div{
+            line-height: 1.8em;
+        }
+    </style>
+    <script>
+        $(function(){
+            function oClick(){
+                //自定义事件
+                $("#divTip").append("<div>按钮二的单击事件</div>");
+            }
+            $("input:eq(0)").bind("click",function(){
+                //绑定单击事件
+                $("#divTip").append("<div>按钮一的单击事件</div>");
+            });
+            //绑定自定义事件
+            $("input:eq(1)").bind("click",oClick);
+            $("input:eq(2)").bind("click",function(){
+                //移除全部点击事件
+                $("input").unbind();
+            })
+        })
+    </script>
+</head>
+
+<body>
+    <div>
+        <input type="button" id="Button1" class="btn" value="按钮一">
+        <input type="button" id="Button2" class="btn" value="按钮二">
+        <input type="button" id="Button3" class="btn" value="删除事件">
+    </div>
+    <div class="divTip" style="padding-top: 10px;"></div>
+</body>
+
+</html>

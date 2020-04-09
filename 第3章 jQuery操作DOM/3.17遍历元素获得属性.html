@@ -1,0 +1,28 @@
+<!-- 在页面中放置俩个段落的p标签,并在该标签内分别设置两个span标签,通过wrap()与wrapInner()俩种方法,改变标记中的外部元素与内部文本的字体显示方式 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3.17遍历元素获得属性</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+        body{font-size: 13px;}
+        p{background-color: #eee;padding: 5px;width: 200px;}
+    </style>
+    <script>
+        $(function(){
+            $("img").each(function(index){
+                //根据形参index设置元素的title属性
+                this.title="第"+index+"幅二维码,alt内容是"+this.alt;
+            })
+        })
+    </script>
+</head>
+<body>
+    <p>
+        <img src="http://5b0988e595225.cdn.sohucs.com/q_mini,c_zoom,w_640/images/20170819/573ffeefc29e4006803a3155ffbc31c1.gif" alt="第0幅二维码">
+        <img src="http://5b0988e595225.cdn.sohucs.com/q_mini,c_zoom,w_640/images/20170819/573ffeefc29e4006803a3155ffbc31c1.gif" alt="第1幅二维码">
+        <img src="http://5b0988e595225.cdn.sohucs.com/q_mini,c_zoom,w_640/images/20170819/573ffeefc29e4006803a3155ffbc31c1.gif" alt="第2幅二维码">
+    </p>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>3.15替换页面元素内容</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+    <style>
+        body{font-size: 13px;}
+        span{font-weight:bold;}
+        p{background-color: #eee;padding: 5px;width: 200px;}   
+    </style>
+    <script>
+        $(function () {
+            $("#Span1").replaceWith("<span title='replaceWith'>小黄狗</span>");
+            $("<span title='replaceAll'> wxapps@sina.com</span>").replaceAll("#Span2");
+        })
+    </script>
+
+<body>
+  <p>姓名:<span id="Span1"></span></p>
+  <p>邮箱:<span id="Span2"></span></p>
+</body>
+
+</html>
+<!-- 在一个页面中,创建2个span标记,id号分别为span1和span2,然后,通过jQuery中的俩种替换元素的方法,分别替换元素span1和span2 -->

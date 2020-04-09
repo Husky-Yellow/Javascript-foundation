@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>3.6设置或获取元素的值</title>	
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+      body{font-size: 15px;text-align: center;}
+      div{padding: 3px;width: 120px;margin: 3px;float: left;}
+      .txt{border: #666 1px solid;padding: 3px;}
+      select{height: 96px;width: 85px;}
+    </style>
+    <script type="text/javascript">
+      $(function(){
+          //设置列表框change事件
+          $("select").change(function(){
+              //获取列表框所选中的全部选项的值
+              var strSel = $("select").val().join(",");
+              //显示列表框所选中的全部选项的值
+              $("#p1").html(strSel);
+          });
+          //设置文本框focus事件
+          $("input").change(function(){
+              //获取文本框的值
+              var strTxt = $("input").val();
+              //显示文本框所输入的值
+              $("#p2").html(strTxt);
+          });
+          //设置文本框focus事件
+          $("input").focus(function(){
+              //清空文本框的值
+              $("input").val("");
+          });
+      })
+    </script>
+</head>
+<body>
+   <div>
+       <select multiple="multiple">
+           <option value="1">Item 1</option>
+           <option value="2">Item 2</option>
+           <option value="3">Item 3</option>
+           <option value="4">Item 4</option>
+           <option value="5">Item 5</option>
+           <option value="6">Item 6</option>
+       </select>
+       <p id="p1"></p>
+   </div>
+   <div>
+       <input type="text" class="txt">
+       <p id="p2"></p>
+    </div>
+</body>
+</html>

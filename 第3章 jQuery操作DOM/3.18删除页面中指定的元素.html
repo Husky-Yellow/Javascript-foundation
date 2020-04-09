@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3.18删除页面中指定的元素</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+        body{font-size: 13px;}
+        ul{width: 200px;}
+        ul li{list-style: none;padding: 0px;height: 23px;}
+        span{padding-left: 20px;}
+        .btn{border: #666 1px solid;padding: 2px;width: 60px;filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#ffffff,EndColorStr=#ECE9D8);}
+    </style>
+    <script>
+        $(function(){
+            //设置首行字体
+            $("ul li:first").css("font-weight","bold");
+            //设置点击事件
+            $("#Button1").click(function(){
+                //删除指定属性的元素
+                $("ul li").remove("li[title=t]");
+                //删除节点中第2个元素
+                $("ul li:eq(1)").remove();
+            })
+        })
+    </script>
+</head>
+<body>
+    <ul>
+        <li>学号</li>
+        <li title="t">1001</li>
+        <li>1002</li>
+        <li>1003</li>
+        <li style="text-align: center;padding-top: 5px;">
+            <input type="button" id="Button1" value="删除" class="btn">
+        </li>
+    </ul>
+    <br>
+    <br>
+    <br>
+    <p>在页面中,通过ul标记展示列表式的数据信息,并设置一个按钮.在点击该按钮时,将删除指定的标记元素</p>
+</body>
+</html>

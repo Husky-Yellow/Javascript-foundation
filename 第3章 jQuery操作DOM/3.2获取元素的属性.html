@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>获取元素的属性</title>	
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- <script src="../jquery-3.2.1.min.js"></script> -->
+    <style>
+      body{font-size: 13px;}
+      .clsSpn{
+        float: left;
+        padding-top: 10px;
+        padding-left: 10px;
+      }
+      .clsImg{
+        border: solid 1px #ccc;
+        padding: 3px;
+        float: left;
+      }
+    </style>
+    <script type="text/javascript">
+      $(function(){
+        //属性值一
+        var strAlt = $("img").attr("src");
+        //属性值二
+        strAlt += "<br><br>"+ $("img").attr("title");
+        //显示在页面中
+        $("#divAlt").html(strAlt);
+      })
+    </script>
+</head>
+<body>
+    <img src="" alt="" style="float: left;">
+    <span class="clsSpn">正在加载图片...</span>
+</body>
+</html>

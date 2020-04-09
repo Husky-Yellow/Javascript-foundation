@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2.2输出文字信息</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+        body{
+            font-size: 12px;
+            text-align: center;
+        }
+    </style>
+    <!-- <script>
+        window.onload=function(){
+            if(document.getElementById("divT")){
+                var oDiv=document.getElementById("divT");
+                oDiv.innerHTML="嗯，出来了。你敲代码很像蔡徐坤啊"
+            }
+        }
+    </script> -->
+
+    <script>
+        $(function(){
+            $("#divT").html("嗯，出来了。你敲代码很像蔡徐坤啊")
+        })
+    </script>
+</head>
+<body>
+    <div id="divT"></div>
+</body>
+</html>

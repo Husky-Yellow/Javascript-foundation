@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>3.13动态插入function函数返回值至元素节点</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+    <style>
+        body{font-size: 13px;}
+    </style>
+    <script>
+        $(function () {
+            //插入内容
+            $("span").after(retHtml);
+            function retHtml(){
+                var str = "<span><b>Write Less Do More</b><span>";
+                    return str;
+            }
+        })
+    </script>
+
+<body>
+   <span>jquery</span>
+</body>
+
+</html>
+<!-- 在一个页面中,创建1个span标记,然后通过function函数返回另外一个span标记,并将该标插入页面中的span标记后 -->

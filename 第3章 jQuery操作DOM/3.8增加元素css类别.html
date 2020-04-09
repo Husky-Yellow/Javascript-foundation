@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>3.8增加元素css类别</title>	
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <style>
+      body{font-size: 15px;}
+      p{padding: 5px;width: 220px;}
+      .cls1{font-weight: bold;font-style: italic}
+      .cls2{border: solid 1px #666;background-color: #eee;}
+    </style>
+    <script type="text/javascript">
+      $(function(){
+          $(function(){
+              $("p").click(function(){
+                  //同时新增俩个样式类别
+                  $(this).addClass("cls1 cls2");
+                 //removeClass()方法用于删除类别
+              })
+          })
+      })
+    </script>
+</head>
+<body>
+   <p>Write Less Do More</p>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>3.4设置元素的属性(二)</title>	
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- <script src="../jquery-3.2.1.min.js"></script> -->
+    <style>
+      body{font-size: 13px;}
+      .clsSpn{float: left;padding: 10px 0 0 10px;}
+      .clsImg{border: solid 1px #ccc;padding: 3px;float: left;}
+    </style>
+    <script type="text/javascript">
+      $(function(){
+       $("img").attr("src",function(){
+           //设置src属性
+           return "images/img0"+Math.floor(Math.random()*2+1)+".jpg"
+       });
+       //设置title属性
+       $("img").attr("title","这是一幅风景画");
+       //增加样式
+       $("img").addClass(clsImg);
+      })
+    </script>
+</head>
+<body>
+    <img src="" alt="" style="float: left;">
+</body>
+</html>

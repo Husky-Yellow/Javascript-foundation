@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>3.14复制指定元素节点</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+    <style>
+        img{border: solid 1px #ccc;padding: 3px;margin: 5px;}
+    </style>
+    <script>
+        $(function () {
+            //插入内容
+            $("img").click(function(){
+                $(this).clone(true).appendTo("span");
+            }) 
+        })
+    </script>
+
+<body>
+   <span>
+       <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1557831133446&di=9dde872ce4bc7f7de283e13f5829acbe&imgtype=0&src=http%3A%2F%2Fimg.zcool.cn%2Fcommunity%2F01c66a554292bc0000019ae90a02ce.jpg%402o.jpg" alt="" title="封面">
+   </span>
+</body>
+
+</html>
+<!-- 在一个页面中,创建1个img标记,显示一幅图片:当单击该图片时,在其右侧通过clone()方法复制一副图片 -->

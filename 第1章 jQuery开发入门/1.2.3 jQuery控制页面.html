@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1.2.3 jQuery控制页面</title>
+    <style>
+            .divFrame{
+                width: 260px;
+                border: solid 1px #666;
+                font-size: 10pt;
+            }
+            .divTitle{
+                background-color: #eee;
+                padding: 5px;
+            }
+            .divContent{
+                padding: 8px;
+                font-size: 9pt;
+            }
+            .divTip{
+                width: 244px;
+                border: solid 1px #666;
+                padding: 8px;
+                font-size: 9pt;
+                margin-top: 5px;
+                display: none;
+            }
+            .txtCss{
+                border: solid 1px #ccc;
+            }
+            .divBtn{
+                padding-top: 5px;
+            }
+            .divBtn .btnCss{
+                border: solid 1px #535353;
+                width: 60px;
+            }
+    </style>
+   	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <!-- 普通javascript写法 -->
+    <script>
+            function btnClick(){
+                //获取·文本框的值
+                var oTxtValue=document.getElementById("Text").value;
+                //获取·单选框按钮的值
+                var oRdoValue=(Radio1.checked)?"已婚":"未婚";
+                //获取·复选框按钮的值
+                document.getElementById("divTip").style.display="block";
+                //显示提示文本元素
+                document.getElementById("divTip").innerHTML=oTxtValue+"<br>"+oRdoValue+"<br>"+oChkValue;
+            }
+    </script>
+
+    <!-- jQuery 写法 -->
+    <script>
+            $(function(){
+                $("#Button1").click(function(){
+                     //获取·文本框的值
+                    var oTxtValue=$("#Text1").val();
+                      //获取·单选框按钮的值
+                    var oRdoValue=$("#Radio").is(":checked")?"男":"女";
+                    //获取·复选框按钮的值
+                    var oChkValue=$("#Checkbox1").is(":checked")?"已婚":"未婚";
+                      //显示提示文本元素
+                    $("#divTip").css("display","block").html(oTxtValue+"<br>"+oRdoValue+"<br>"+oChkValue);
+                })
+            })
+    </script>
+</head>
+<body>
+    <div class="divFraame">
+        <div class="divTitle">请输入如下信息</div>
+        <div class="divContent">
+            姓名：<input type="text" id="Text1" class="txtCss"><br/>
+            性别：<input type="radio" id="Radio1" name="rdoSex" value="男">男
+                        <input type="radio" id="Radio2" name="rdoSex" value="女">女<br/>
+            婚否：<input type="checkbox" id="Checkbox1">
+                        <div class="divBtn">
+                            <input type="button" id="Button1" value="提交" class="btnCss" onclick="btnClick()">
+                         </div>
+        </div>
+    </div>
+    <div id="divTip" class="divTip"></div>
+</body>
+</html>

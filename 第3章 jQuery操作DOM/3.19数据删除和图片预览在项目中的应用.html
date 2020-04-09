@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>3.19数据删除和图片预览在项目中的应用</title>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> -->
+    <script src="../jquery-3.2.1.min.js"></script>
+    <style>
+        body{font-size: 12px;}
+        table{width: 360px;border-collapse: collapse;}
+        table tr th,td{border: solid 1px #666;text-align: center;}
+        table tr td img{border: solid 1px #ccc;padding: 3px;width: 42px;height: 60px;cursor:pointer;}
+        table tr td span{float: left;padding-left: 12px;}
+        table tr th{background-color: #ccc;height: 32px;}
+        .clsImg{position: absolute;border: solid 1px #ccc;padding: 3px;width: 85px;height: 120px;background-color: #eee;display: none;}
+        .btn{border: #666 1px solid;padding: 2px;width: 50px;filter: progid:DXImageTransform.Microsoft.Gradient(GradientType=0,StartColorStr=#ffffff,EndColorStr=#ECE9D8);}
+    </style>
+    <script>
+        $(function(){
+            //隔行变色
+          $("table tr:nth-child(odd)").css("background-color","#eee");  
+        //   全选复选框单机事件--全选和取消全选
+                $("#chkAll").on('click', function() {
+                    $("table tr td input[type=checkbox]").prop("checked", $(this).prop('checked'));
+                })
+                $("table tr td input:checkbox").on('click', function() {
+                    //当选中的长度等于checkbox的长度的时候,就让控制全选反选的checkbox设置为选中,否则就为未选中
+                    if($("table tr td input:checkbox").length === $("table tr td input:checked").length) {
+                        $("#chkAll").prop("checked", true);
+                    } else {
+                        $("#chkAll").prop("checked", false);
+                    }
+                })
+                //如果自己被选中和未被选中-pdf原版
+                // if(this.checked){
+                //     $("table tr td input[type=checkbox]").attr("checked",true);
+                // }else{
+                //     $("table tr td input[type=checkbox]").attr("ckecked",false);
+                // }
+            //删除按钮单击事件
+            $("#btnDel").click(function(){
+                //获取除全选复选框外的所有选中框
+                var intL = $("table tr td input:checked:not('#chkAll')").length;
+                if(intL != 0){//如果有选中项
+                    $("table tr td input[type=checkbox]:not('#chkAll')").each(function(index){//遍历除全选复选框的行
+                        if(this.checked){
+                            $("table tr[id=" + this.value + "]").remove();//获取选中的值,并删除该值所在的行
+                        }
+                    })
+                }
+            })
+            // 小图片鼠标移动事件
+            //初始化提示图片位置
+            var x=5;
+            var y =15;
+            $("table tr td img").mousemove(function(e){
+                $("#imgTip")
+                .attr("src",this.src)//设置提示图片src属性
+                .css({"top":(e.pageY +y)+"px","left":(e.pageX+x)+"px"})//设置提示图片的位置
+                .show(1000);//显示图片
+            })
+            // 小图片鼠标移出事件
+            $("table tr td img").mouseout(function(){
+                $("#imgTip").hide();//隐藏图片
+            })
+        })
+    </script>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>选项</th>
+            <th>编号</th>
+            <th>封面</th>
+            <th>购书人</th>
+            <th>性别</th>
+            <th>购书价</th>
+        </tr>
+        <tr id="0">
+            <td>
+                <input type="checkbox" id="Checkbox1" value="0" type="checkbox">
+            </td>
+            <td>1001</td>
+            <td>
+                <img src="../img/timg.jpg" alt="" srcset="">
+            </td>
+            <td>小黄狗</td>
+            <td>公</td>
+            <td>123</td>
+        </tr>
+        <tr id="1">
+            <td>
+                <input type="checkbox" id="Checkbox2" value="1" type="checkbox">
+            </td>
+            <td>1002</td>
+            <td>
+                <img src="../img/timg.jpg" alt="" srcset="">
+            </td>
+            <td>小黄犬</td>
+            <td>公</td>
+            <td>123</td>
+        </tr>
+        <tr id="2">
+            <td>
+                <input type="checkbox" id="Checkbox3" value="2" type="checkbox">
+            </td>
+            <td>1003</td>
+            <td>
+                <img src="../img/timg.jpg" alt="" srcset="">
+            </td>
+            <td>一条狗</td>
+            <td>公</td>
+            <td>123</td>
+        </tr>
+    </table>
+    <table>
+        <tr>
+            <td style="text-align: left;height: 28px;">
+                <span>
+                    <input type="checkbox" id="chkAll">全选
+                </span>
+                <span>
+                    <input type="button" id="btnDel" value="删除" class="btn">
+                </span>
+            </td>
+        </tr>
+    </table>
+    <img src="../img/timg.jpg" alt="" id="imgTip" class="clsImg">
+</body>
+</html>

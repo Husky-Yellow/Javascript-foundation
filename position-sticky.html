@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>position: sticky</title>
+    <style>
+        *{margin: 0; padding: 0;}
+        .center{
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        header{
+            height: 60px;
+            line-height: 60px;
+            background: powderblue;
+        /*********重点在这里，**************/
+            /*Internet Explorer, Edge 15 及更早 IE 版本不支持 sticky 定位。 Safari 需要使用 -webkit- prefix*/
+            position: -webkit-sticky; /* Safari */
+            position: sticky;
+            top: 0;
+            /*指定 top, right, bottom 或 left 四个阈值其中之一，才可使粘性定位生效。否则其行为与相对定位相同。*/
+        }
+        main{
+            height: 1800px;
+            padding-top: 20px;
+            background: pink;
+        }
+        footer{
+            height: 50px;
+            line-height: 50px;
+            background: purple;
+        }
+ 
+    </style>
+</head>
+<body>
+<header class="center">头部(我用了粘性定位)</header>
+<main class="center">
+    内容
+</main>
+<footer class="center">底部</footer>
+ 
+</body>
+</html>

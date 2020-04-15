@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>图片懒加载</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            display: block;
+            width: 400px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+    <img src="" date-src="http://bbs.jooyoo.net/attachment/Mon_0905/24_65548_2835f8eaa933ff6.jpg" date-h="300" alt="">
+    <img src="" date-src="http://bbs.jooyoo.net/attachment/Mon_0905/24_65548_2835f8eaa933ff6.jpg" date-h="300" alt="">
+    <img src="" date-src="http://bbs.jooyoo.net/attachment/Mon_0905/24_65548_2835f8eaa933ff6.jpg" date-h="300" alt="">
+    <img src="" date-src="http://bbs.jooyoo.net/attachment/Mon_0905/24_65548_2835f8eaa933ff6.jpg" date-h="300" alt="">
+    <img src="" date-src="http://bbs.jooyoo.net/attachment/Mon_0905/24_65548_2835f8eaa933ff6.jpg" date-h="300" alt="">
+    <img src="" date-src="http://bbs.jooyoo.net/attachment/Mon_0905/24_65548_2835f8eaa933ff6.jpg" alt="">
+    <script>
+        var imgs=document.getElementsByTagName("img");
+        var n=0;//用来记录当前是第几张图片
+        var seeHeight = document.documentElement.clientHeight;
+        var h = imgs[0].getAttribute('date-h');
+        // console.log(h);
+        var index = Math.floor(seeHeight/h);//一进页面展示的几张图片
+        for(i=0;i<=index;i++){
+            imgs[i].src = imgs[i].getAttribute('date-src');
+        }
+        window.onscroll = function(){
+            for (var i = n; i < imgs.length; i++) {
+                var scrollTop = document.body.scrollTop || document.documentElement.scrollTop;
+                if (imgs[i].offsetTop < seeHeight + scrollTop) {
+                    if (imgs[i].getAttribute('src') == '') {
+                        imgs[i].src = imgs[i].getAttribute('date-src');
+                    }
+                    n = i + 1;
+                    console.log('n = ' + n);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
+
+
